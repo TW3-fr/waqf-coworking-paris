@@ -1,0 +1,1310 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waqf Coworking Paris · Dossier d'étude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1B2C; --navy:#13294B; --navy2:#1E3A64; --teal:#0F766E; --teal-l:#E3F1EF;
+  --gold:#B8892B; --gold-l:#F5ECD9; --sand:#FAF7F0; --paper:#FFFFFF; --line:#E4DDCC;
+  --muted:#5B6676; --red:#B42318; --red-l:#FBE9E7; --green:#157F3D; --green-l:#E6F4EA;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#1b2433;font-family:Inter,system-ui,sans-serif;color:var(--ink);overflow:hidden}
+#stage{position:absolute;left:50%;top:calc(50% - 22px);width:1280px;height:720px;transform-origin:center center;margin-left:-640px;margin-top:-360px}
+.slide{position:absolute;inset:0;background:var(--sand);display:none;flex-direction:column;padding:38px 56px 0 56px;overflow:hidden;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.slide.active{display:flex}
+.slide::before{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;opacity:.06;background:
+ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%2313294B' stroke-width='1.2'%3E%3Crect x='20' y='20' width='60' height='60'/%3E%3Crect x='20' y='20' width='60' height='60' transform='rotate(45 50 50)'/%3E%3Ccircle cx='50' cy='50' r='18'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+.sh{display:flex;flex-direction:column;gap:4px;margin-bottom:16px}
+.kicker{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;color:var(--navy);font-weight:600}
+h2{font-size:34px;line-height:1.12;max-width:1100px}
+h2 em{font-style:normal;color:var(--gold)}
+.big{font-family:Fraunces,serif;font-size:30px;font-weight:700;color:var(--navy);line-height:1}
+.big small{font-size:13px;color:var(--muted);font-family:Inter,sans-serif;font-weight:600}
+.lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;margin-top:9px}
+h3{font-size:16px;margin-bottom:6px}
+.lead{font-size:14px;color:var(--muted);max-width:1080px;line-height:1.45}
+.body{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;font-size:12.5px;line-height:1.45}
+.sf{height:34px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);font-size:10.5px;color:var(--muted);margin-top:8px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.card.navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+.card.navy h3{color:#fff}
+.card.teal{background:var(--teal-l);border-color:#bfe0db}
+.card.gold{background:var(--gold-l);border-color:#e8d6ae}
+.card.red{background:var(--red-l);border-color:#f2c6bf}
+.card.green{background:var(--green-l);border-color:#bfe3c9}
+ul.b{padding-left:16px}ul.b li{margin:3px 0}
+.kpi{font-family:Fraunces,serif;font-size:27px;margin:6px 0 4px;color:var(--navy);font-weight:700;line-height:1.1}
+.card.navy .kpi{color:#fff}
+.kpl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.card.navy .kpl{color:#c8d3e6}
+table{border-collapse:collapse;width:100%;font-size:11.4px;background:var(--paper)}
+th{background:var(--navy);color:#fff;text-align:left;font-weight:600;padding:6px 8px;font-size:11px}
+td{padding:4px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.hl td{background:var(--gold-l);font-weight:600}
+tr.tot td{background:var(--navy);color:#fff;font-weight:700}
+td.n,th.n{text-align:right;white-space:nowrap}
+.ref{font-size:9px;vertical-align:super;color:var(--teal);font-weight:700;cursor:pointer;margin-left:1px}
+.ref::before{content:"["}.ref::after{content:"]"}
+.tag{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 6px;border-radius:20px;background:var(--gold-l);color:#7a5a17;margin-left:4px;vertical-align:1px}
+.tag.est{background:#EEF1F5;color:#4a5566}
+.tag.ok{background:var(--green-l);color:var(--green)}
+.tag.ko{background:var(--red-l);color:var(--red)}
+.note{font-size:10.5px;color:var(--muted)}
+.ph{position:relative;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,#d9e2ee,#eef2f7);height:118px}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph.noimg img{display:none}
+.ph.noimg::after{content:"Photo indisponible : voir l'annonce";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted)}
+.ph .cap{position:absolute;left:0;bottom:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#fff;font-size:9.5px;padding:10px 8px 4px}
+.pill{display:inline-block;background:var(--navy);color:#fff;border-radius:20px;padding:2px 9px;font-size:10.5px;font-weight:600;margin:0 4px 4px 0}
+.pill.t{background:var(--teal)}.pill.g{background:var(--gold)}
+.flex{display:flex;gap:14px}.col{display:flex;flex-direction:column;gap:10px}
+.cover{background:var(--navy);color:#fff;padding:0;flex-direction:row}
+.cover .l{flex:1.15;padding:64px 56px;display:flex;flex-direction:column;justify-content:space-between}
+.cover .r{flex:.85;position:relative;background:#0b1830}
+.cover .r img{width:100%;height:100%;object-fit:cover;opacity:.75}
+.cover h1{color:#fff;font-size:42px;line-height:1.1;margin:14px 0 18px}
+.cover .kicker{color:#e5c37a}
+.cover p{color:#c8d3e6;font-size:15px;line-height:1.5;max-width:560px}
+.bar{height:12px;border-radius:3px;background:var(--navy)}
+.bars .row{display:grid;grid-template-columns:200px 1fr 70px;align-items:center;gap:10px;margin:5px 0;font-size:11.5px}
+.bars .row .v{font-weight:700;text-align:right}
+.gantt{display:grid;grid-template-columns:230px repeat(12,1fr);font-size:10.5px;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.gantt .h{background:var(--navy);color:#fff;font-weight:600;padding:5px 4px;text-align:center}
+.gantt .h:first-child{text-align:left;padding-left:8px}
+.gantt .lab{padding:1px 8px;line-height:16px;border-bottom:1px solid #eee;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gantt .grp{grid-column:1/-1;background:var(--gold-l);font-weight:700;padding:1px 8px;color:#7a5a17;font-size:10px;letter-spacing:.05em;text-transform:uppercase}
+.gantt .cell{border-bottom:1px solid #eee;border-left:1px dashed #eee;position:relative;height:18px}
+.gantt .gb{position:relative;height:18px;border-bottom:1px solid #eee;display:flex;align-items:center}
+.gantt .gb span{display:block;height:12px;border-radius:3px;background:var(--teal);width:100%;margin:0 2px}
+.gantt .gb.f span{background:var(--gold)}.gantt .gb.c span{background:var(--red)}.gantt .gb.n span{background:var(--navy)}
+.gantt .ms{display:flex;align-items:center;justify-content:center;border-bottom:1px solid #eee;height:18px;color:var(--red);font-weight:800}
+.plan{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(6,1fr);gap:4px;height:300px}
+.plan div{border-radius:6px;padding:6px;font-size:10.5px;font-weight:600;color:var(--navy);border:1px solid rgba(19,41,75,.15);display:flex;flex-direction:column;justify-content:space-between}
+.plan small{font-weight:500;color:var(--muted);font-size:9.5px}
+.diagram{display:grid;grid-template-columns:1fr 70px 1fr 70px 1fr;align-items:center;gap:0}
+.arrow{text-align:center;color:var(--gold);font-size:11px;font-weight:700}
+.arrow b{display:block;font-size:22px;line-height:1}
+#ui{position:fixed;left:0;right:0;bottom:0;height:44px;display:flex;align-items:center;justify-content:center;gap:10px;color:#c8d3e6;font-size:12px}
+#ui button{background:#2a3850;border:1px solid #3b4c68;color:#fff;border-radius:6px;padding:6px 12px;font:600 12px Inter,sans-serif;cursor:pointer}
+#ui button:hover{background:#34476a}
+#prog{position:fixed;left:0;top:0;height:3px;background:var(--gold);transition:width .2s}
+body.read{overflow:auto}
+body.read #stage{position:static;transform:none!important;margin:24px auto;width:1280px;height:auto}
+body.read .slide{display:flex;position:relative;height:720px;margin-bottom:24px}
+body.read #ui{background:#1b2433}
+@media print{
+  @page{size:1280px 720px;margin:0}
+  body{background:#fff;overflow:visible}
+  #ui,#prog{display:none}
+  #stage{position:static;transform:none!important;margin:0;width:1280px;height:auto}
+  .slide{display:flex!important;position:relative;height:720px;page-break-after:always;break-after:page;box-shadow:none;border-radius:0}
+}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<div id="stage">
+
+<!-- 1 COVER -->
+<section class="slide cover">
+  <div class="l">
+    <div>
+      <div class="kicker">Dossier d'étude · Projet « Waqf Coworking TW3 » (nom de travail)</div>
+      <h1>Un waqf urbain pour étudier, travailler et se réunir au cœur de Paris</h1>
+      <p>Coworking ouvert de 7h à 23h, salle modulable de 100 personnes, salles réservables à l'heure et espace de recueillement avec ablutions. Étude de marché, comparatif d'adresses, montage juridique et fiscal du waqf en droit français, business plan, scénarios et feuille de route jusqu'à l'ouverture.</p>
+    </div>
+    <div style="font-size:12px;color:#c8d3e6;line-height:1.6">
+      <b style="color:#fff">Porteur envisagé :</b> association loi 1901 (Institut TW3 ou association dédiée, à arbitrer)<br>
+      <b style="color:#fff">Version de travail :</b> 19 octobre 2026 · données de marché relevées à cette date<br>
+      <b style="color:#fff">Statut :</b> document confidentiel, non contractuel, à valider par avocat fiscaliste et comité charia
+    </div>
+  </div>
+  <div class="r">
+    <img src="https://imagescdn.bureauxlocaux.com/i2/Kstj6COg5f0bnUY0QX5JQXk1tQGJBsWFw8oPR2bPHTc/114/image.jpg" alt="Local Wikivillage, Paris 20e" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+    <div style="position:absolute;left:16px;bottom:14px;font-size:10px;color:#e5e9f0">Local recommandé : Wikivillage, 8 rue de Srebrenica, Paris 20e · photo BureauxLocaux / ETIC</div>
+  </div>
+</section>
+
+<!-- 2 SYNTHESE -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Synthèse exécutive</span>
+  <h2>L'essentiel en <em>6 chiffres</em></h2></div>
+  <div class="body" style="justify-content:center;gap:18px;font-size:14px">
+    <div class="grid g3" style="gap:18px">
+      <div class="card navy"><div class="kpl">Levée</div><div class="kpi" style="font-size:40px">70 k€ → 380 k€</div><div>Gala du 28/11 · puis OMAS et Ramadan</div></div>
+      <div class="card"><div class="kpl">Local</div><div class="kpi" style="font-size:30px">Wikivillage 20e</div><div><b>325 m²</b> · ERP 5 · <b>7 834 €/mois</b><span class="ref" data-s="14">14</span></div></div>
+      <div class="card"><div class="kpl">Ouverture (scénario 1)</div><div class="kpi" style="font-size:40px">Mi-sept. 2027</div><div>Repli : février 2028</div></div>
+      <div class="card"><div class="kpl">Charges / mois</div><div class="kpi" style="font-size:40px">24,6 k€</div><div>Dont 4 salariés : 9,3 k€</div></div>
+      <div class="card"><div class="kpl">Recettes / mois (M12)</div><div class="kpi" style="font-size:40px">27,4 k€</div><div>Excédent <b>≈ 2,8 k€</b>, réinvesti</div></div>
+      <div class="card gold"><div class="kpl">Autofinancé</div><div class="kpi" style="font-size:40px">6e mois</div><div>Murs achetés visés vers <b>2039</b></div></div>
+    </div>
+    <div class="grid g3">
+      <div class="card teal"><b>Différence :</b> grande salle de 100 pers., espace de prière, prix sous La Permanence<span class="ref" data-s="1">1</span>.</div>
+      <div class="card teal"><b>Ouvert à tous</b>, quels que soient religion, âge ou métier. <b>Gratuit</b> pour les membres de TW3 et de l'OMAS.</div>
+      <div class="card red"><b>Urgent :</b> rescrit mécénat déposé <b>avant le gala du 28 novembre</b><span class="ref" data-s="33">33</span>.</div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+
+<!-- TOP 3 -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Les 3 meilleurs locaux</span>
+  <h2>Surface, coût et <em>délai de rentabilité</em></h2></div>
+  <div class="body">
+    <div class="grid g3">
+      <div class="card" style="border:2px solid var(--gold);padding:10px 14px">
+        <div class="ph" style="height:120px"><img src="https://imagescdn.bureauxlocaux.com/i2/Kstj6COg5f0bnUY0QX5JQXk1tQGJBsWFw8oPR2bPHTc/114/image.jpg" alt="Wikivillage" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('noimg')"><div class="cap">Photo BureauxLocaux / ETIC</div></div>
+        <h3 style="margin-top:8px;font-size:18px">1 · Wikivillage, 20e <span class="tag ok">recommandé</span></h3>
+        <div class="lbl">Surface</div><div class="big">325 m² <small>RDC · ERP 5 · neuf</small></div>
+        <div class="lbl">Loyer HT HC</div><div class="big">7 834 € <small>/mois</small></div>
+        <div class="lbl">Coût total</div><div class="big">24,6 k€ <small>/mois</small></div>
+        <div class="lbl">Rentable chaque mois</div><div class="big" style="color:var(--green)">6e mois <small>févr. 2028</small></div>
+        <div class="lbl">Pertes de démarrage compensées</div><div class="big" style="font-size:22px">20e mois <small>avril 2029</small></div>
+        <p class="note" style="margin-top:6px">Sans frais d'entrée, bail 3/6/9<span class="ref" data-s="14">14</span>.</p>
+      </div>
+      <div class="card" style="padding:10px 14px">
+        <div class="ph" style="height:120px"><img src="https://imagescdn.bureauxlocaux.com/i2/VhI1nOoKKr3jpHU3NY7M6-o9eAjfUSb4MNlbrNVHG9E/114/image.jpg" alt="Porte de la Chapelle" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('noimg')"><div class="cap">Photo BureauxLocaux / BNP Paribas RE</div></div>
+        <h3 style="margin-top:8px;font-size:18px">2 · Porte de la Chapelle, 18e <span class="tag">plan B</span></h3>
+        <div class="lbl">Surface</div><div class="big">303 m² <small>RDC · ERP à créer</small></div>
+        <div class="lbl">Loyer HT HC</div><div class="big">4 545 € <small>/mois</small></div>
+        <div class="lbl">Coût total</div><div class="big">21,6 k€ <small>/mois</small></div>
+        <div class="lbl">Rentable chaque mois</div><div class="big" style="color:var(--green)">6e mois <small>févr. 2028</small></div>
+        <div class="lbl">Pertes de démarrage compensées</div><div class="big" style="font-size:22px">13e mois <small>sept. 2028</small></div>
+        <p class="note" style="margin-top:6px"><b>Bail de 36 mois maximum</b><span class="ref" data-s="16">16</span> : départ forcé vers 2030.</p>
+      </div>
+      <div class="card" style="padding:10px 14px">
+        <div class="ph" style="height:120px"><img src="https://imagescdn.bureauxlocaux.com/i2/hSEI6-m_oo9hReK33EmfDpQpLvvuc9a3sFjnpJszEsM/114/image.jpg" alt="Rochechouart" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('noimg')"><div class="cap">Photo BureauxLocaux / Groupe Babylone</div></div>
+        <h3 style="margin-top:8px;font-size:18px">3 · Rochechouart, 9e <span class="tag ko">trop cher</span></h3>
+        <div class="lbl">Surface</div><div class="big">460 m² <small>RDC + sous-sol · ERP 5</small></div>
+        <div class="lbl">Loyer HT HC</div><div class="big">14 950 € <small>/mois</small></div>
+        <div class="lbl">Coût total</div><div class="big">33,0 k€ <small>/mois</small></div>
+        <div class="lbl">Rentable chaque mois</div><div class="big" style="color:var(--red)">Jamais <small>au CA visé</small></div>
+        <div class="lbl">Condition</div><div class="big" style="font-size:22px">33 k€ <small>de recettes/mois (+20 %)</small></div>
+        <p class="note" style="margin-top:6px">Emplacement idéal (Barbès à 200 m)<span class="ref" data-s="15">15</span>, mais loyer double.</p>
+      </div>
+    </div>
+    <p class="note">Hypothèses : recettes cibles de 27,4 k€/mois (A), −5 % pour C (surface réduite), +10 % pour B ; même montée en charge ; +3 % la 2e année. « Rentable » = recettes ≥ charges. L'investissement initial est un don immobilisé en waqf : il n'a pas à être remboursé. <span class="tag est">estimations</span></p>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- SCENARIOS -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Trois scénarios</span>
+  <h2><em>3 scénarios</em>, décision le 31 mars</h2></div>
+  <div class="body">
+    <div class="grid g3">
+      <div class="card" style="border:2px solid var(--green)"><h3 style="font-size:19px">1 · Cible</h3>
+        <div class="lbl">Déclencheur au 31/03/2027</div><div><b>≥ 300 k€ engagés</b> et local ERP 5 disponible (Wikivillage ou équivalent)</div>
+        <div class="lbl">Local</div><div class="big">325 m² <small>salle 100 pers.</small></div>
+        <div class="lbl">Budget</div><div class="big">380 k€</div>
+        <div class="lbl">Ouverture</div><div class="big">Mi-sept. 2027</div>
+        <div class="lbl">Rentable chaque mois</div><div class="big" style="color:var(--green)">6e mois <small>févr. 2028</small></div>
+        <div class="lbl">Risques</div><ul class="b"><li>AT de 4 mois : tout retard décale l'ouverture</li><li>Remboursement des prêts sans intérêt (≈ 1 k€/mois)</li></ul></div>
+      <div class="card" style="border:2px solid var(--gold)"><h3 style="font-size:19px">2 · Prudent</h3>
+        <div class="lbl">Déclencheur</div><div><b>150 à 300 k€</b>, ou Wikivillage indisponible</div>
+        <div class="lbl">Local</div><div class="big">200-250 m² <small>salle 60 pers.</small></div>
+        <div class="lbl">Budget</div><div class="big">≈ 250 k€</div>
+        <div class="lbl">Ouverture</div><div class="big">Février 2028</div>
+        <div class="lbl">Rentable chaque mois</div><div class="big" style="color:var(--green)">9e mois <small>oct. 2028</small></div>
+        <div class="lbl">Risques</div><ul class="b"><li>Moins d'événements, marge faible</li><li>Pertes de démarrage compensées en ≈ 4 ans</li></ul></div>
+      <div class="card" style="border:2px solid var(--red)"><h3 style="font-size:19px">3 · Pilote</h3>
+        <div class="lbl">Déclencheur</div><div><b>&lt; 150 k€</b> au 31 mars</div>
+        <div class="lbl">Format</div><div class="big" style="font-size:22px">Occupation temporaire <small>ou créneaux dans un tiers-lieu</small></div>
+        <div class="lbl">Budget</div><div class="big">60-100 k€</div>
+        <div class="lbl">Ouverture</div><div class="big">Sept. 2027 <small>format réduit</small></div>
+        <div class="lbl">Objectif</div><div class="big" style="font-size:22px">100 abonnés <small>pour prouver la demande</small></div>
+        <div class="lbl">Ensuite</div><ul class="b"><li>Le reste des dons attend dans la dotation</li><li>Bail long visé en 2029</li></ul></div>
+    </div>
+    <p class="note">S2 : loyer estimé de 4,2 k€/mois (230 €/m²/an), 3 salariés, recettes cibles de 17,4 k€/mois. S3 : par exemple 20 €/m²/mois en occupation temporaire ESS<span class="ref" data-s="41">41</span>. Mêmes hypothèses de montée en charge que S1. <span class="tag est">estimations</span></p>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 3 BESOIN / CIBLE -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Marché et cibles</span>
+  <h2>Un besoin réel : <em>étudier tard, pas cher</em></h2>
+  </div>
+  <div class="body">
+    <div class="grid g3">
+      <div class="card"><h3>Signaux de marché</h3><ul class="b">
+        <li>La Permanence est née du constat que les étudiants parisiens manquent de places pour travailler (bibliothèques bondées, logements exigus)<span class="ref" data-s="3">3</span>.</li>
+        <li>La majorité des coworkings parisiens accueillent leurs membres du lundi au vendredi de 8h à 20h<span class="ref" data-s="9">9</span>.</li>
+        <li>Un poste fixe en open space se loue 250 à 450 €/mois à Paris, un nomade 5 jours 80 à 150 €<span class="ref" data-s="4">4</span>.</li>
+        <li>Une petite salle de réunion (4 à 6 personnes) coûte 40 à 95 € HT/heure à Paris<span class="ref" data-s="10">10</span>.</li></ul></div>
+      <div class="card"><h3>Personas prioritaires</h3>
+        <p><span class="pill">Étudiant L3-M2</span><span class="pill">Préparation concours</span></p>
+        <p style="margin-bottom:6px">Budget inférieur à 100 €/mois, besoin de silence, de soirées et de week-ends, révisions en groupe.</p>
+        <p><span class="pill t">Jeune actif 25-35 ans</span><span class="pill t">Freelance</span></p>
+        <p style="margin-bottom:6px">Budget de 150 à 200 €/mois, salles pour rendez-vous clients, réseau, domiciliation.</p>
+        <p><span class="pill g">Associations · BDE</span><span class="pill g">Entreprises</span></p>
+        <p>Salle de 100 personnes pour conférences, afterworks sans alcool, iftars, séminaires.</p></div>
+      <div class="card gold"><h3>Proposition de valeur</h3><ul class="b">
+        <li>Ouvert 7h-23h, 7 jours sur 7, avec accès par QR code hors des heures d'accueil.</li>
+        <li>Prix inférieurs de 16 % (actifs) à 26 % (étudiants) au concurrent de référence.</li>
+        <li>Espace de recueillement et ablutions : un confort rare pour les usagers pratiquants, sans exclure personne.</li>
+        <li>Une mission (le waqf) qui finance des places gratuites pour étudiants boursiers.</li></ul>
+        <p class="note" style="margin-top:8px">À valider : enquête de 200 répondants auprès des BDE et associations partenaires pendant le gala du 28 novembre <span class="tag est">hypothèse</span></p></div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 4 BENCHMARK -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Benchmark concurrentiel</span>
+  <h2><em>Moins cher</em>, plus de services</h2></div>
+  <div class="body">
+    <table>
+      <tr><th style="width:150px">Acteur</th><th style="width:130px">Modèle</th><th>Abonnement mensuel</th><th>Salles de réunion</th><th style="width:110px">Horaires</th><th style="width:250px">Atout / limite</th></tr>
+      <tr><td><b>La Permanence</b><br>5e, 14e, 18e</td><td>Coworking abordable</td><td>Dès 140 €, illimité 190 € TTC, −30 % étudiants, dès 3 €/h<span class="ref" data-s="1">1</span></td><td>3 à 8 places, 10 €/h + 2 €/personne/h<span class="ref" data-s="2">2</span></td><td>24h/24, 7j/7<span class="ref" data-s="1">1</span></td><td>Prix et horaires imbattables ; pas de grande salle, communauté limitée</td></tr>
+      <tr><td><b>ESSpace</b><br>Paris 13e</td><td>Tiers-lieu associatif ESS</td><td>Poste à 20 € HT/jour contre 30 € HT de médiane locale<span class="ref" data-s="7">7</span></td><td>2 salles<span class="ref" data-s="7">7</span></td><td>n.c.</td><td>Modèle associatif proche du nôtre ; capacité réduite</td></tr>
+      <tr><td><b>Now Coworking</b></td><td>Réseau milieu de gamme</td><td>Nomade 5 j 110-160 €, fixe 280-420 €<span class="ref" data-s="6">6</span></td><td>Quelques heures incluses<span class="ref" data-s="6">6</span></td><td>Horaires de bureau</td><td>Engagement d'un mois ; qualité variable selon les sites<span class="ref" data-s="6">6</span></td></tr>
+      <tr><td><b>WeWork</b></td><td>Premium international</td><td>All Access 350-450 €, fixe 450-650 €<span class="ref" data-s="5">5</span></td><td>4 pers. : 30-50 €/h<span class="ref" data-s="5">5</span></td><td>n.c.</td><td>20 à 40 % plus cher que les concurrents français<span class="ref" data-s="5">5</span></td></tr>
+      <tr><td><b>Marché parisien</b></td><td>Moyenne</td><td>Nomade 5 j 80-150 €, fixe 250-450 €<span class="ref" data-s="4">4</span></td><td>4-6 pers. : 40-95 € HT/h<span class="ref" data-s="10">10</span></td><td>Surtout 8h-20h<span class="ref" data-s="9">9</span></td><td>Grands réseaux en haut de fourchette<span class="ref" data-s="4">4</span></td></tr>
+      <tr><td><b>Anticafé Paris</b></td><td>Café-coworking à l'heure</td><td>6 € la première heure, 29 € la journée (réseau)<span class="ref" data-s="8">8</span></td><td>Incluses</td><td>Fermé</td><td>Fermeture de l'espace parisien en juillet 2023<span class="ref" data-s="8">8</span> : le paiement à l'heure seul est fragile</td></tr>
+      <tr class="hl"><td><b>Notre projet</b><br>Waqf tiers-lieu</td><td>Waqf + exploitation sociale</td><td>Étudiant 99 € TTC, actif 159 € TTC, pass 10 j 79 €, 3 €/h</td><td>4 et 12 places + <b>salle de 100 personnes</b></td><td>7h-23h, 7j/7</td><td>Recueillement et ablutions, événementiel, bourses étudiantes</td></tr>
+    </table>
+    <p class="note">Prix TTC sauf mention HT. Relevés au 19/10/2026 sur les sites des acteurs ou des comparateurs cités ; les fourchettes de marché sont celles des guides tarifaires, non des grilles officielles.</p>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 5 LA PERMANENCE -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Focus concurrent de référence</span>
+  <h2>La Permanence, <em>la référence</em></h2></div>
+  <div class="body">
+    <div class="grid" style="grid-template-columns:1.1fr 1fr 1fr">
+      <div class="col">
+        <div class="ph" style="height:170px"><img src="https://cdn.prod.website-files.com/67bdbe68ef0371a14221b956/68e8bd341e44479a0e7dc214__93A4252.jpg" alt="La Permanence" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('noimg')"><div class="cap">Espace La Permanence · photo la-permanence.com</div></div>
+        <div class="ph" style="height:150px"><img src="https://cdn.prod.website-files.com/67bdbe68ef0371a14221b956/68f64cbdf91489027320ca5f__93A1873-min.jpg" alt="Salle de réunion La Permanence Moulin" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('noimg')"><div class="cap">Salle de 8 places, site Moulin (5e) · photo la-permanence.com</div></div>
+      </div>
+      <div class="card"><h3>Ce que fait La Permanence</h3><ul class="b">
+        <li>3 sites de 250 à 300 m² (5e, 14e, 18e), 65 places chacun<span class="ref" data-s="1">1</span>.</li>
+        <li>Ouverture 24h/24, 7j/7, 365 jours par an<span class="ref" data-s="1">1</span>.</li>
+        <li>Illimité à 190 € TTC/mois, dès 140 €, −30 % étudiants ; pass de 16 h à 35 € TTC<span class="ref" data-s="1">1</span>.</li>
+        <li>4 salles de 3 à 8 places, 10 € de l'heure pour la première personne puis 2 €/h par personne ; 7 €/h pour la salle de 3<span class="ref" data-s="2">2</span>.</li>
+        <li>Réservation en ligne, QR code d'accès temporaire envoyé aux invités, modification jusqu'à 48 h avant et annulation jusqu'à 72 h avant<span class="ref" data-s="2">2</span>.</li></ul></div>
+      <div class="col">
+        <div class="card green"><h3>À reprendre</h3><ul class="b"><li>Réservation 100 % en ligne et QR code invités.</li><li>Tarification de salle à l'heure et par personne, sans forfait demi-journée.</li><li>Disponibilités en temps réel affichées sur le site.</li></ul></div>
+        <div class="card gold"><h3>Où nous la dépassons</h3><ul class="b"><li><b>Grande salle de 100 personnes</b> : La Permanence plafonne à 8 places<span class="ref" data-s="2">2</span>.</li><li>Étudiant à 99 € TTC contre environ 133 € après remise.</li><li>Espace de recueillement, ablutions, programme de mentorat et bourses.</li><li>Communauté animée (événements hebdomadaires).</li></ul></div>
+        <div class="card red"><h3>Où elle reste meilleure</h3><p>Ouverture de nuit et maillage de 3 sites. Parade : horaires 7h-23h couvrant 95 % des usages étudiants <span class="tag est">hypothèse</span>, puis second site dès la 3e année.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 6 TARIFS -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Offre et grille tarifaire</span>
+  <h2>Nos prix : <em>99 €</em> étudiant, <em>159 €</em> actif</h2></div>
+  <div class="body">
+    <div class="grid" style="grid-template-columns:1fr 1.15fr">
+      <div class="card"><h3>Accès illimité mensuel comparé (€ TTC)</h3>
+        <div class="bars">
+          <div class="row"><span>WeWork All Access (milieu fourchette)</span><div class="bar" style="width:100%;background:#8a96a8"></div><span class="v">400 €</span></div>
+          <div class="row"><span>Now Coworking, poste fixe (milieu)</span><div class="bar" style="width:87.5%;background:#8a96a8"></div><span class="v">350 €</span></div>
+          <div class="row"><span>Marché parisien, poste fixe (milieu)</span><div class="bar" style="width:87.5%;background:#8a96a8"></div><span class="v">350 €</span></div>
+          <div class="row"><span>La Permanence, illimité</span><div class="bar" style="width:47.5%;background:var(--navy2)"></div><span class="v">190 €</span></div>
+          <div class="row"><span>La Permanence, étudiant (−30 %)</span><div class="bar" style="width:33.25%;background:var(--navy2)"></div><span class="v">133 €</span></div>
+          <div class="row"><span><b>Nous, jeune actif</b></span><div class="bar" style="width:39.75%;background:var(--gold)"></div><span class="v">159 €</span></div>
+          <div class="row"><span><b>Nous, étudiant partenaire</b></span><div class="bar" style="width:24.75%;background:var(--gold)"></div><span class="v">99 €</span></div>
+        </div>
+        <p class="note" style="margin-top:8px">Sources : WeWork<span class="ref" data-s="5">5</span>, Now<span class="ref" data-s="6">6</span>, marché<span class="ref" data-s="4">4</span>, La Permanence<span class="ref" data-s="1">1</span>. Milieu de fourchette retenu quand le prix est donné en intervalle.</p></div>
+      <div class="card"><h3>Grille proposée <span class="tag est">à affiner après enquête</span></h3>
+        <table>
+          <tr><th>Formule</th><th class="n">Prix TTC</th><th class="n">Prix HT</th><th>Cible</th></tr>
+          <tr><td>Accès à l'heure (plafond 15 €/jour)</td><td class="n">3 €/h</td><td class="n">2,50 €</td><td>Tous</td></tr>
+          <tr><td>Pass 10 jours (valable 60 jours)</td><td class="n">79 €</td><td class="n">65,83 €</td><td>Nomades</td></tr>
+          <tr><td>Illimité étudiant (écoles et BDE partenaires)</td><td class="n">99 €</td><td class="n">82,50 €</td><td>Étudiants</td></tr>
+          <tr><td>Illimité jeune actif</td><td class="n">159 €</td><td class="n">132,50 €</td><td>Actifs, freelances</td></tr>
+          <tr><td>Résident (poste fixe + casier)</td><td class="n">290 €</td><td class="n">241,67 €</td><td>Freelances, TPE</td></tr>
+          <tr class="hl"><td>Membres TW3 et OMAS (quota de 25 places)</td><td class="n">0 €</td><td class="n">–</td><td>Associations de la levée</td></tr>
+          <tr><td>Salle « Studio » 4 places</td><td class="n" colspan="2">8 €/h + 2 €/pers./h</td><td>Rendez-vous</td></tr>
+          <tr><td>Salle « Agora » 12 places (−30 % abonnés)</td><td class="n" colspan="2">25 €/h</td><td>Équipes, révisions</td></tr>
+          <tr><td>Grande salle 100 pers., soirée 4 h, associations et BDE</td><td class="n">600 €</td><td class="n">500 €</td><td>Conférences, iftars</td></tr>
+          <tr><td>Grande salle, journée entreprise</td><td class="n">2 160 €</td><td class="n">1 800 €</td><td>Séminaires</td></tr>
+          <tr><td>Domiciliation</td><td class="n">39 €</td><td class="n">32,50 €</td><td>Créateurs</td></tr>
+        </table>
+        <p class="note" style="margin-top:6px">Repères événementiels : salle de 100 personnes à Châtelet à partir de 2 000 €<span class="ref" data-s="11">11</span> ; salles des fêtes parisiennes de 900 € HT (100 pers.) à 3 500 € HT<span class="ref" data-s="12">12</span>.</p></div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 7 PROGRAMME SURFACES -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Programme des surfaces</span>
+  <h2><em>325 m²</em> suffisent</h2></div>
+  <div class="body">
+    <div class="grid" style="grid-template-columns:1.05fr 1fr">
+      <div class="card"><h3>Schéma fonctionnel indicatif (non à l'échelle)</h3>
+        <div class="plan">
+          <div style="grid-column:1/8;grid-row:1/5;background:#E3F1EF">Open space modulable / salle événement<small>135 m² · 50 postes ou 100 pers. en configuration conférence</small></div>
+          <div style="grid-column:8/13;grid-row:1/3;background:#EEF1F5">Zone silence<small>30 m² · 14 postes</small></div>
+          <div style="grid-column:8/11;grid-row:3/5;background:#F5ECD9">Espace de recueillement<small>22 m² · 15-18 pers.</small></div>
+          <div style="grid-column:11/13;grid-row:3/5;background:#F5ECD9">Ablutions H / F<small>10 m²</small></div>
+          <div style="grid-column:1/4;grid-row:5/7;background:#fff">Accueil + café<small>25 m²</small></div>
+          <div style="grid-column:4/6;grid-row:5/7;background:#EEF1F5">Agora 12 pl.<small>25 m²</small></div>
+          <div style="grid-column:6/7;grid-row:5/7;background:#EEF1F5">Studio<small>12 m²</small></div>
+          <div style="grid-column:7/8;grid-row:5/7;background:#EEF1F5">Booths<small>3 × 2 m²</small></div>
+          <div style="grid-column:8/10;grid-row:5/7;background:#fff">Sanitaires dont PMR<small>15 m²</small></div>
+          <div style="grid-column:10/11;grid-row:5/7;background:#fff">Kitch.<small>10 m²</small></div>
+          <div style="grid-column:11/13;grid-row:5/7;background:#fff">Stockage mobilier + technique<small>15 m²</small></div>
+        </div>
+        <p class="note" style="margin-top:6px">Circulations comprises (environ 20 m²). L'espace de recueillement est placé à l'écart de l'entrée et des sanitaires WC, avec accès direct aux ablutions.</p></div>
+      <div class="col">
+        <table>
+          <tr><th>Zone</th><th class="n">m²</th><th class="n">Capacité</th></tr>
+          <tr><td>Open space modulable / événementiel</td><td class="n">135</td><td class="n">50 postes · 100 pers.</td></tr>
+          <tr><td>Zone silence</td><td class="n">30</td><td class="n">14 postes</td></tr>
+          <tr><td>Accueil, café, casiers</td><td class="n">25</td><td class="n">–</td></tr>
+          <tr><td>Salle Agora + Studio + 3 booths</td><td class="n">43</td><td class="n">12 + 4 + 3</td></tr>
+          <tr><td>Espace de recueillement</td><td class="n">22</td><td class="n">15-18 pers.</td></tr>
+          <tr><td>Ablutions hommes / femmes</td><td class="n">10</td><td class="n">2 × 2 postes</td></tr>
+          <tr><td>Sanitaires (dont 1 PMR), kitchenette</td><td class="n">25</td><td class="n">–</td></tr>
+          <tr><td>Stockage, local technique, circulations</td><td class="n">35</td><td class="n">–</td></tr>
+          <tr class="tot"><td>Total</td><td class="n">325</td><td class="n">67 postes de travail</td></tr>
+        </table>
+        <div class="card teal"><h3>Lecture des surfaces par site</h3><ul class="b">
+          <li><b>325 m²</b> (Wikivillage) : programme complet, sans marge.</li>
+          <li><b>460 m²</b> (9e, dont 140 m² en sous-sol) : confort, salles et recueillement au sous-sol (effectif du sous-sol inférieur à 100 pour rester en 5e catégorie<span class="ref" data-s="20">20</span>).</li>
+          <li><b>303 m²</b> (18e) : il faut sacrifier la zone silence.</li>
+          <li>L'effectif maximal à déclarer (usagers et invités, hors salariés) doit rester sous 200 personnes<span class="ref" data-s="20">20</span>.</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 8 PRIERE -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Espace de recueillement et ablutions</span>
+  <h2>Salle de prière : <em>oui</em>, réservée aux usagers</h2></div>
+  <div class="body">
+    <div class="grid g2">
+      <div class="col">
+        <div class="card"><h3>1. Ne pas devenir un lieu de culte</h3><p>Un lieu de prière qui reçoit des fidèles sans être déclaré comme ERP de culte (type V) reste soumis à la réglementation ERP, et le maire dispose d'outils pour imposer la mise en conformité<span class="ref" data-s="23">23</span>. <b>Règle d'usage :</b> prière individuelle ou en petit groupe d'usagers présents, pas d'ouverture au quartier, pas de prêche ni de prière du vendredi ouverte au public.</p></div>
+        <div class="card"><h3>2. Ne pas devenir une association « mixte »</h3><p>Depuis la loi du 24 août 2021, une association loi 1901 qui accomplit des activités en relation avec l'exercice public d'un culte doit l'indiquer dans ses statuts et respecter des obligations proches des associations cultuelles, dont la séparation comptable des activités cultuelles<span class="ref" data-s="24">24</span>. Un simple espace de confort pour les usagers n'est pas une organisation de cérémonies cultuelles : à sécuriser par le règlement intérieur.</p></div>
+        <div class="card"><h3>3. Rester ouvert à tous</h3><p>Le refus d'un service en raison de la religion est une discrimination pénalement sanctionnée (C. pén., art. 225-1 et 225-2, à vérifier dans leur version en vigueur). Le lieu, et l'« espace de recueillement », restent accessibles à tous les usagers.</p></div>
+        <div class="card gold"><h3>4. Financer à part</h3><p>Par prudence, ne pas imputer l'aménagement de l'espace de prière sur les dons ouvrant droit à réduction d'impôt de l'association non cultuelle : le financer sur le budget d'exploitation ou par un don dédié sans reçu fiscal <span class="tag est">recommandation à valider par l'avocat fiscaliste</span></p></div>
+      </div>
+      <div class="col">
+        <div class="card teal"><h3>Cahier des charges technique</h3><ul class="b">
+          <li>Surface de 20 à 25 m² pour 15 à 18 personnes, comptée dans l'effectif ERP, avec issue, éclairage de sécurité et extincteur.</li>
+          <li>Orientation vers la qibla, environ 119° (est-sud-est) depuis Paris, à vérifier sur place.</li>
+          <li>Sol textile lavable et matériaux conformes aux exigences de réaction au feu en ERP.</li>
+          <li><b>Ablutions séparées des WC</b>, espace hommes et espace femmes, robinets bas avec assise, siphon de sol, revêtement antidérapant, faïence murale, eau chaude, ventilation mécanique renforcée.</li>
+          <li>Un poste d'ablutions accessible PMR, en cohérence avec les règles d'accessibilité de l'ERP.</li>
+          <li>Banc et casiers à chaussures, porte-manteaux, rideau de séparation amovible.</li>
+          <li>Signalétique sobre : calme, horaires indicatifs, durée d'occupation courte.</li></ul></div>
+        <div class="card"><h3>Ordre de grandeur</h3><p>Plomberie, évacuations, carrelage et ventilation : <b>12 à 18 k€</b>, intégrés dans le poste aménagement <span class="tag est">estimation</span>. Le local doit permettre des arrivées et évacuations d'eau : point à vérifier dès la visite.</p></div>
+        <div class="card red"><h3>Clause de bail indispensable</h3><p>Faire viser par le bailleur l'aménagement d'un « espace de recueillement et de points d'eau » dans la clause de destination et les plans annexés au bail.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 9 ERP -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Conformité ERP et urbanisme</span>
+  <h2>ERP 5e catégorie : <em>4 mois</em> d'instruction</h2></div>
+  <div class="body">
+    <div class="grid g3">
+      <div class="card"><h3>Classement</h3><ul class="b">
+        <li>Salle de conférence, de réunion ou salle réservée aux associations : type L ; bureaux : type W<span class="ref" data-s="20">20</span>.</li>
+        <li>Seuil de la 5e catégorie : moins de 200 personnes au total et moins de 100 en sous-sol (type L)<span class="ref" data-s="20">20</span>.</li>
+        <li>En 5e catégorie, les salariés ne sont pas comptés avec le public<span class="ref" data-s="20">20</span>.</li>
+        <li>Pic de 100 personnes en événement plus les usagers présents : marge confortable sous le seuil.</li></ul></div>
+      <div class="card"><h3>Autorisation de travaux (AT)</h3><ul class="b">
+        <li>Demande d'autorisation de construire, aménager ou modifier un ERP (Cerfa 13824), avec notices de sécurité et d'accessibilité.</li>
+        <li>Instruction de 4 mois ; avis de la commission de sécurité et d'accessibilité sous 2 mois maximum, faute de quoi il est réputé favorable<span class="ref" data-s="21">21</span>.</li>
+        <li>À Paris, les démarches ERP relèvent de la Préfecture de police<span class="ref" data-s="22">22</span>.</li>
+        <li>Déclaration préalable en parallèle si la façade ou l'enseigne changent.</li></ul></div>
+      <div class="card"><h3>Ouverture au public</h3><ul class="b">
+        <li>Après travaux, l'exploitant demande au maire ou à la Préfecture de police l'autorisation d'ouverture<span class="ref" data-s="21">21</span>.</li>
+        <li>Les ERP de 5e catégorie sans locaux à sommeil sont dispensés de visite de réception de la commission de sécurité<span class="ref" data-s="21">21</span>.</li>
+        <li>Prévoir le registre de sécurité, les vérifications techniques initiales (électricité, alarme, extincteurs), les consignes et la formation du personnel.</li>
+        <li>Registre public d'accessibilité tenu à disposition.</li></ul></div>
+    </div>
+    <div class="grid g2">
+      <div class="card gold"><h3>Bail et destination</h3><ul class="b">
+        <li>Clause de destination couvrant expressément : coworking, location de salles, événements, formation, espace de recueillement, petite restauration sans cuisson.</li>
+        <li>Condition suspensive : obtention de l'AT. Franchise de loyer de 3 mois pendant les travaux. Autorisation de sous-occupation au profit de la structure d'exploitation.</li>
+        <li>Vérifier le règlement de copropriété ou du tiers-lieu (horaires jusqu'à 23h, bruit en soirée).</li></ul></div>
+      <div class="card"><h3>Autres obligations d'exploitation</h3><ul class="b">
+        <li>Pas de diffusion musicale prévue : pas de déclaration SACEM.</li>
+        <li>RGPD : registre des traitements, information des usagers, durée de conservation des données du contrôle d'accès ; autorisation préfectorale si vidéoprotection d'un espace ouvert au public.</li>
+        <li>Pas d'alcool : charte de privatisation annexée aux contrats de location de salle (cohérence avec l'éthique du waqf).</li>
+        <li>Assurances : multirisque, responsabilité civile organisateur d'événements, dommages aux biens du waqf.</li></ul></div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 10 ADRESSES -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Comparatif d'adresses</span>
+  <h2>5 locaux comparés</h2>
+  <p class="lead">Repère : loyer moyen parisien <b>562 €/m²/an</b><span class="ref" data-s="13">13</span>. Nos 5 locaux : <b>180 à 390 €</b>.</p></div>
+  <div class="body">
+    <div class="grid g5">
+      <div class="card" style="padding:9px;border:2px solid var(--gold)">
+        <div class="ph"><img src="https://imagescdn.bureauxlocaux.com/i2/Kstj6COg5f0bnUY0QX5JQXk1tQGJBsWFw8oPR2bPHTc/114/image.jpg" alt="Wikivillage" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('noimg')"><div class="cap">Photo BureauxLocaux / ETIC</div></div>
+        <h3 style="margin-top:8px">A · Wikivillage, 20e <span class="tag ok">recommandé</span></h3>
+        <p style="font-size:11px">8 rue de Srebrenica · 325 m² RDC · neuf 2024 · ERP 5 · PMR · DPE B · 289 €/m²/an, soit <b>7 834 €/mois</b> · charges 7,33 €/m²/an · dépôt 21 694 € · <b>sans frais d'entrée</b> · bail 3/6/9 · tram à 100 m<span class="ref" data-s="14">14</span>. Tiers-lieu ESS de 7 500 m²<span class="ref" data-s="19">19</span>.</p>
+      </div>
+      <div class="card" style="padding:9px">
+        <div class="ph"><img src="https://imagescdn.bureauxlocaux.com/i2/hSEI6-m_oo9hReK33EmfDpQpLvvuc9a3sFjnpJszEsM/114/image.jpg" alt="Rue Marguerite de Rochechouart" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('noimg')"><div class="cap">Photo BureauxLocaux / Groupe Babylone</div></div>
+        <h3 style="margin-top:8px">B · Rochechouart, 9e</h3>
+        <p style="font-size:11px">90-92 rue Marguerite de Rochechouart · 460 m² (320 RDC + 140 sous-sol) · ERP 5 · hauteur 4 m · 390 €/m²/an, soit <b>14 950 €/mois</b> · charges 32,6 €/m²/an · honoraires 5 % · Barbès à 200 m<span class="ref" data-s="15">15</span>.</p>
+      </div>
+      <div class="card" style="padding:9px">
+        <div class="ph"><img src="https://imagescdn.bureauxlocaux.com/i2/VhI1nOoKKr3jpHU3NY7M6-o9eAjfUSb4MNlbrNVHG9E/114/image.jpg" alt="Porte de la Chapelle" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('noimg')"><div class="cap">Photo BureauxLocaux / BNP Paribas RE</div></div>
+        <h3 style="margin-top:8px">C · Porte de la Chapelle, 18e</h3>
+        <p style="font-size:11px">Immeuble récent, lots en RDC de 303 ou 417 m² · dès 180 €/m²/an, soit <b>4 545 €/mois</b> pour 303 m² · <b>bail de 36 mois maximum</b> · plug and play · métro 12, RER E<span class="ref" data-s="16">16</span>. ERP à créer.</p>
+      </div>
+      <div class="card" style="padding:9px">
+        <div class="ph noimg"><img alt=""></div>
+        <h3 style="margin-top:8px">D · Bassin de la Villette, 19e</h3>
+        <p style="font-size:11px">383 m² en RDC rénovés, meublés, entrée indépendante sur rue, hauteur supérieure à 3 m · 337 €/m²/an, soit <b>10 750 €/mois</b> · charges 5 580 €/an · honoraires 1 %<span class="ref" data-s="17">17</span>. <span class="tag ko">annonce non accessible au 19/10, à reconfirmer</span></p>
+      </div>
+      <div class="card" style="padding:9px">
+        <div class="ph noimg"><img alt=""></div>
+        <h3 style="margin-top:8px">E · Cœur du 20e</h3>
+        <p style="font-size:11px">255 m² en RDC sur cour, ERP 5, PMR, profil formation ou crèche · loyer annuel <b>70 000 à 75 000 € HT HC</b><span class="ref" data-s="18">18</span>. Surface trop juste pour le programme. <span class="tag ko">à reconfirmer</span></p>
+      </div>
+    </div>
+    <div class="card teal" style="padding:9px 14px"><b>Alternative à explorer :</b> l'occupation temporaire de bâtiments vacants (coopérative Plateau Urbain), par exemple 20 €/m²/mois pour des projets associatifs ou ESS hors QPV<span class="ref" data-s="41">41</span>. Adaptée à un pilote, peu compatible avec la perpétuité recherchée du waqf.</div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 11 MATRICE -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Analyse multicritère</span>
+  <h2><em>Wikivillage</em> en tête</h2></div>
+  <div class="body">
+    <table>
+      <tr><th>Critère</th><th class="n">Poids</th><th class="n">A · Wikivillage 20e</th><th class="n">B · Rochechouart 9e</th><th class="n">C · Chapelle 18e</th><th class="n">D · Villette 19e</th></tr>
+      <tr><td>Coût mensuel total de fonctionnement <span class="tag est">estimé</span></td><td class="n">25 %</td><td class="n">24,6 k€ · 4</td><td class="n">33,0 k€ · 1</td><td class="n">21,6 k€ · 5</td><td class="n">27,9 k€ · 3</td></tr>
+      <tr><td>Conformité ERP 5 et PMR existante</td><td class="n">20 %</td><td class="n">Oui · 5</td><td class="n">Oui · 5</td><td class="n">À créer · 2</td><td class="n">Inconnue · 2</td></tr>
+      <tr><td>Adéquation de la surface (325 m² visés)</td><td class="n">15 %</td><td class="n">325 m² · 4</td><td class="n">460 m² · 5</td><td class="n">303 m² · 3</td><td class="n">383 m² · 5</td></tr>
+      <tr><td>Accessibilité étudiants et transports</td><td class="n">15 %</td><td class="n">3</td><td class="n">5</td><td class="n">4</td><td class="n">4</td></tr>
+      <tr><td>Coût d'entrée (dépôt + honoraires)</td><td class="n">10 %</td><td class="n">21,7 k€ · 5</td><td class="n">53,8 k€ · 2</td><td class="n">21,8 k€ · 4</td><td class="n">33,5 k€ · 4</td></tr>
+      <tr><td>Écosystème, image, cohérence ESS</td><td class="n">10 %</td><td class="n">5</td><td class="n">4</td><td class="n">3</td><td class="n">3</td></tr>
+      <tr><td>Pérennité du bail (logique waqf)</td><td class="n">5 %</td><td class="n">3/6/9 · 4</td><td class="n">3/6/9 · 4</td><td class="n">36 mois · 1</td><td class="n">Négociable · 3</td></tr>
+      <tr class="tot"><td>Score pondéré sur 5</td><td></td><td class="n">4,25</td><td class="n">3,55</td><td class="n">3,45</td><td class="n">3,35</td></tr>
+    </table>
+    <div class="grid g3">
+      <div class="card green"><h3>Recommandation : A</h3><p>Visiter sous 15 jours, adresser une lettre d'intention à ETIC et vérifier : compatibilité de la destination « commerce » avec le coworking et l'événementiel, arrivées d'eau pour les ablutions, horaires du bâtiment jusqu'à 23h, possibilité d'utiliser les salles mutualisées du tiers-lieu.</p></div>
+      <div class="card gold"><h3>Plan B : C</h3><p>Le moins cher, pour un pilote de 3 ans si A n'est pas disponible. À négocier : transformation du lot en ERP 5 aux frais partagés, et option de prolongation ou bail commercial à l'issue.</p></div>
+      <div class="card"><h3>Méthode</h3><p>Coût mensuel = loyer + charges + taxe foncière estimée (environ 20 €/m²/an) + 16,0 k€ de charges d'exploitation hors loyer, identiques pour tous les sites. Coût d'entrée = 3 mois de dépôt + honoraires publiés (15 % retenus pour C).</p></div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 12 FIQH -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Le waqf : fondements</span>
+  <h2>Le waqf : <em>immobiliser</em>, faire profiter</h2></div>
+  <div class="body">
+    <div class="grid g2">
+      <div class="col">
+        <div class="card navy"><h3>Le principe</h3><p>Selon le hadith rapporté par al-Bukhari et Muslim, le Prophète conseilla à Umar, au sujet de sa terre de Khaybar, d'en immobiliser le fonds et d'en donner les fruits en aumône, à condition que le fonds ne soit ni vendu, ni donné, ni hérité. C'est la forme la plus aboutie de la <i>sadaqa jariya</i>, l'aumône dont la récompense continue après la mort du donateur<span class="ref" data-s="32">32</span>.</p></div>
+        <div class="card"><h3>Les cinq éléments, appliqués au projet</h3>
+          <table>
+            <tr><th>Élément</th><th>Dans le projet</th></tr>
+            <tr><td><b>Wâqif</b> (constituant)</td><td>Les donateurs, via l'association et le fonds</td></tr>
+            <tr><td><b>Mawqûf</b> (bien immobilisé)</td><td>Aménagements, mobilier, équipements, dotation permanente ; à terme, les murs</td></tr>
+            <tr><td><b>Mawqûf 'alayh</b> (bénéficiaires)</td><td>Tous les usagers ; <b>gratuité pour les membres de TW3 et de l'OMAS</b> (élèves, bénévoles, parrains, adhérents)</td></tr>
+            <tr><td><b>Sîgha</b> (acte)</td><td>Statuts du fonds et acte de dotation irrévocable</td></tr>
+            <tr><td><b>Nâzir</b> (administrateur)</td><td>Conseil d'administration du fonds, collégial</td></tr>
+          </table></div>
+      </div>
+      <div class="col">
+        <div class="card teal"><h3>Pourquoi la location est compatible</h3><ul class="b">
+          <li>L'école malikite admet le waqf temporaire et le waqf de l'usufruit (<i>manfa'a</i>), y compris l'usufruit d'un bien loué pour la durée du bail.</li>
+          <li>Le waqf de biens meubles et de numéraire est admis par les hanafites (pratique ottomane) et les malikites ; il est aujourd'hui encadré par les normes de l'AAOIFI (standard charia relatif au waqf).</li>
+          <li>En France, le Secours Islamique investit ses dons waqf via son fonds DOTASIF dans des locaux achetés pour être loués<span class="ref" data-s="29">29</span>.</li></ul>
+          <p class="note" style="margin-top:6px">Références doctrinales à faire confirmer par écrit par le comité charia (avis consultatif annexé au dossier donateurs).</p></div>
+        <div class="card gold"><h3>Règles de gestion « halal » proposées</h3><ul class="b">
+          <li>Aucun emprunt à intérêt ; besoins ponctuels couverts par des prêts sans intérêt (<i>qard hasan</i>) de membres, écrits et déclarés.</li>
+          <li>Trésorerie non rémunérée par intérêt ou placée sur des supports conformes.</li>
+          <li>Charte des privatisations : pas d'alcool ni d'activité contraire à l'éthique du lieu.</li>
+          <li>Remploi (<i>istibdâl</i>) prévu aux statuts : si le bail prend fin, les biens du waqf suivent vers un nouveau local.</li>
+          <li><b>Zakat :</b> les avis divergent sur son affectation à un waqf ; la collecte vise la <i>sadaqa</i>. La zakat ne financerait que des bourses individuelles à des étudiants éligibles, sur avis du comité charia.</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 13 DROIT FRANCAIS -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Transposition en droit français</span>
+  <h2>En droit français : <em>le fonds de dotation</em></h2></div>
+  <div class="body" style="font-size:11.2px;line-height:1.36">
+    <div class="grid" style="grid-template-columns:1.1fr 1fr">
+      <div class="col">
+        <div class="card"><h3>Le problème et la solution</h3><p>En droit islamique, le bien waqf sort du patrimoine du constituant et ne peut être ni vendu, ni donné, ni hérité. En droit français, tout bien appartient à une personne : la solution est de le confier à une <b>personne morale de droit privé à but non lucratif</b>, qui le reçoit de manière <b>irrévocable</b> et dont les statuts verrouillent l'affectation, y compris après dissolution.</p></div>
+        <div class="card teal"><h3>Le fonds de dotation reproduit le mécanisme</h3><ul class="b">
+          <li>Personne morale qui reçoit et gère, en les capitalisant, des biens et droits apportés à titre gratuit et irrévocable, pour une œuvre d'intérêt général<span class="ref" data-s="25">25</span><span class="ref" data-s="28">28</span>.</li>
+          <li>Dotation initiale d'au moins 15 000 € (fonds créés depuis le 25 janvier 2015)<span class="ref" data-s="28">28</span>.</li>
+          <li>Personnalité morale à la publication au Journal officiel de la déclaration faite en préfecture<span class="ref" data-s="27">27</span>.</li>
+          <li>Peut être à la fois opérateur et redistributeur<span class="ref" data-s="27">27</span>.</li>
+          <li>Ne consomme sa dotation que si les statuts le prévoient<span class="ref" data-s="28">28</span> : distinguer une <b>dotation permanente</b> (le waqf) et une <b>dotation consomptible</b> (frais de lancement).</li>
+          <li>À la dissolution, les ressources sont transférées à un autre fonds de dotation ou à une fondation reconnue d'utilité publique<span class="ref" data-s="26">26</span> : l'affectation survit, comme la perpétuité du waqf.</li></ul></div>
+      </div>
+      <div class="col">
+        <div class="card"><h3>Contraintes à intégrer</h3><ul class="b">
+          <li>Commissaire aux comptes dès que les ressources dépassent 10 000 € en fin d'exercice<span class="ref" data-s="25">25</span> (un relèvement à 20 000 € a été proposé par amendement au PLF 2026<span class="ref" data-s="40">40</span>, à vérifier).</li>
+          <li>Rapport d'activité, comptes et rapport du CAC adressés au préfet dans les 6 mois de la clôture<span class="ref" data-s="26">26</span><span class="ref" data-s="25">25</span>.</li>
+          <li>Ne peut pas percevoir de subventions publiques<span class="ref" data-s="26">26</span>.</li>
+          <li>Appel à la générosité du public sur <b>autorisation</b> préfectorale, et non sur simple déclaration<span class="ref" data-s="36">36</span>.</li></ul></div>
+        <div class="card gold"><h3>Verrous complémentaires</h3><ul class="b">
+          <li>Acte de dotation stipulant l'inaliénabilité des biens : l'article 900-1 du Code civil limite dans le temps les clauses d'inaliénabilité, mais son alinéa 2 réserve les libéralités consenties à des personnes morales (texte à citer, version en vigueur à vérifier).</li>
+          <li>Clause de remploi (<i>istibdâl</i>) et clause de dévolution vers un fonds poursuivant le même objet.</li></ul></div>
+        <div class="card navy"><h3>Précédents français</h3><ul class="b">
+          <li>DOTASIF, fonds de dotation du Secours Islamique France créé mi-2010 pour gérer les dons waqf<span class="ref" data-s="29">29</span>.</li>
+          <li>Al Waqf France, gestionnaire d'awqaf sous forme de fonds de dotation<span class="ref" data-s="31">31</span>.</li>
+          <li>Fonds de dotation du Forum européen des femmes musulmanes, constitué en 2012 « sous forme de wakf »<span class="ref" data-s="30">30</span>.</li>
+          <li>Environ 4 600 fonds de dotation en France en février 2025<span class="ref" data-s="40">40</span>.</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+
+<!-- ARGENT -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Le modèle économique du waqf</span>
+  <h2>L'argent <em>reste dans le lieu</em></h2></div>
+  <div class="body">
+    <div class="flex" style="align-items:stretch;gap:10px">
+      <div class="card navy" style="flex:1"><div class="kpl">1 · Dons</div><div class="kpi">380 k€</div><p>Immobilisés pour toujours : aménagements, mobilier, réserve. <b>Jamais rendus, jamais vendus.</b></p></div>
+      <div class="arrow" style="align-self:center"><b>→</b></div>
+      <div class="card" style="flex:1"><div class="kpl">2 · Recettes</div><div class="kpi">27,4 k€/mois</div><p>Abonnements, salles, événements.</p></div>
+      <div class="arrow" style="align-self:center"><b>→</b></div>
+      <div class="card" style="flex:1"><div class="kpl">3 · Charges</div><div class="kpi">24,6 k€/mois</div><p>Salaires (9,3 k€), loyer, ménage, énergie.</p></div>
+      <div class="arrow" style="align-self:center"><b>→</b></div>
+      <div class="card gold" style="flex:1"><div class="kpl">4 · Excédent</div><div class="kpi">≈ 34 k€/an</div><p>Réserve, bourses étudiantes, épargne pour <b>acheter les murs</b>.</p></div>
+    </div>
+    <div class="grid g3">
+      <div class="card green" style="text-align:center"><div class="kpi" style="font-size:44px">0 €</div><div>distribué à des personnes</div></div>
+      <div class="card" style="text-align:center"><div class="kpi" style="font-size:44px">100 %</div><div>des excédents réinvestis</div></div>
+      <div class="card teal" style="text-align:center"><div class="kpi" style="font-size:44px">Murs</div><div>objectif long terme : sortir de la location</div></div>
+    </div>
+    <div class="card"><b>Non lucratif ≠ sans excédent.</b> Une association peut constituer des réserves importantes ; ce que le fisc vérifie, c'est l'absence de distribution (gestion désintéressée) et l'absence de concurrence commerciale injustifiée (règle des 4P)<span class="ref" data-s="51">51</span>.</div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 14 ARCHITECTURE -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Architecture juridique recommandée</span>
+  <h2>Qui fait quoi : <em>3 entités</em></h2></div>
+  <div class="body">
+    <div class="diagram">
+      <div class="card navy" style="min-height:250px"><div class="kpl">Entité A</div><h3 style="font-size:18px">Association loi 1901 porteuse</h3><ul class="b" style="font-size:11.5px">
+        <li>Objet d'intérêt général à caractère éducatif et social : réussite et insertion des jeunes.</li>
+        <li>Rescrit mécénat, reçus fiscaux, déclaration d'appel à la générosité du public.</li>
+        <li>Programme non lucratif : bourses d'accès, mentorat, ateliers, conférences.</li>
+        <li>Finance par convention la gratuité des membres de TW3 et de l'OMAS auprès de C.</li></ul></div>
+      <div class="arrow"><b>→</b>dotation<br>irrévocable<br><br><b>←</b>financement<br>des bourses</div>
+      <div class="card" style="min-height:250px;border:2px solid var(--gold)"><div class="kpl">Entité B · le waqf</div><h3 style="font-size:18px">Fonds de dotation « Waqf »</h3><ul class="b" style="font-size:11.5px">
+        <li>Propriétaire des biens immobilisés : aménagements, mobilier, équipements, dépôt de garantie, réserve ; à terme, les murs.</li>
+        <li>Dotation permanente et dotation consomptible distinguées dans les statuts.</li>
+        <li>CA (nâzir collégial de 3 à 5 membres), comité charia consultatif, CAC.</li>
+        <li>Détient 100 % de C, en actionnaire passif.</li></ul></div>
+      <div class="arrow"><b>→</b>mise à<br>disposition<br>des biens<br><br><b>←</b>redevance<br>et excédents</div>
+      <div class="card teal" style="min-height:250px"><div class="kpl">Entité C</div><h3 style="font-size:18px">Société d'exploitation (SAS)</h3><ul class="b" style="font-size:11.5px">
+        <li>Signe le bail, emploie l'équipe, encaisse abonnements, salles et événements.</li>
+        <li>Soumise à l'IS, à la TVA et à la CFE de droit commun.</li>
+        <li>Agrément « entreprise solidaire d'utilité sociale » envisageable.</li>
+        <li>Excédents conservés dans le groupe : réserves, bourses, achat futur des murs. Rien n'est distribué.</li></ul></div>
+    </div>
+    <div class="grid g3">
+      <div class="card"><h3>Pourquoi séparer A et C</h3><p>Garder des excédents et des réserves importantes est permis à une association. Mais le fisc juge aussi la <b>concurrence avec le secteur commercial</b> (règle des 4P), même sans aucune distribution<span class="ref" data-s="51">51</span>. Les abonnements actifs et privatisations (environ 75 % du CA) sont isolés dans C pour protéger les reçus fiscaux de A.</p></div>
+      <div class="card"><h3>Conventions à signer</h3><ul class="b"><li>A → B : convention d'affectation des dons collectés, conforme aux objectifs déclarés à la préfecture.</li><li>B → C : mise à disposition des biens du waqf (location au prix de marché).</li><li>A ↔ C : achat de places et de prestations au prix de marché.</li></ul></div>
+      <div class="card red"><h3>Points à valider par l'avocat fiscaliste</h3><ul class="b"><li>Régime fiscal des revenus du fonds selon que sa dotation est consomptible ou non.</li><li>Détention de titres par le fonds sans immixtion dans la gestion de C.</li><li>Choix : association existante (TW3) ou nouvelle association dédiée, selon l'objet statutaire.</li></ul></div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 15 OPTIONS -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Options de montage</span>
+  <h2><em>Simple</em> d'abord, filialiser ensuite</h2></div>
+  <div class="body">
+    <table>
+      <tr><th style="width:190px">Option</th><th>Entités</th><th>Avantages</th><th>Inconvénients</th><th style="width:90px">Verdict</th></tr>
+      <tr><td><b>1 · Simplifiée</b></td><td>Association sectorisée (secteur lucratif soumis à l'IS et à la TVA) + fonds de dotation</td><td>Deux entités, coût de structure réduit, rapide à mettre en place</td><td>Lucratif prépondérant : risque sur l'éligibilité au mécénat et sur le rescrit ; sectorisation comptable lourde</td><td><span class="tag">transitoire</span></td></tr>
+      <tr class="hl"><td><b>2 · Recommandée</b></td><td>Association + fonds de dotation + SAS d'exploitation détenue par le fonds</td><td>Étanchéité fiscale, rescrit plus solide, fruits du waqf identifiables, lisibilité pour les donateurs</td><td>Trois comptabilités, CAC, conventions au prix de marché à documenter</td><td><span class="tag ok">cible</span></td></tr>
+      <tr><td><b>3 · Fonds opérateur</b></td><td>Fonds de dotation exploitant directement le lieu</td><td>Une seule entité, waqf et exploitation confondus</td><td>Activité lucrative significative fiscalisée ; appel public sur autorisation ; aucune subvention publique possible (frein aux partenariats universitaires)</td><td><span class="tag ko">écartée</span></td></tr>
+    </table>
+    <div class="grid g3">
+      <div class="card teal"><h3>Séquence proposée</h3><ul class="b"><li><b>Oct-nov 2026 :</b> association (collecte) et fonds de dotation créés.</li><li><b>Fév-mars 2027 :</b> création de la SAS, signature des conventions.</li><li><b>Avant le bail :</b> la SAS est preneur, ou l'association avec faculté de substitution.</li></ul></div>
+      <div class="card"><h3>Si l'association est Institut TW3</h3><p>Vérifier que l'objet statutaire couvre l'accompagnement des étudiants et jeunes actifs ; à défaut, modifier les statuts en AG. Une association dédiée évite d'exposer le statut fiscal existant de TW3 au risque de lucrativité du projet.</p></div>
+      <div class="card gold"><h3>Gouvernance du waqf</h3><ul class="b"><li>CA du fonds : 3 à 5 membres, dont une personnalité indépendante.</li><li>Comité charia : 2 à 3 savants, avis consultatif publié.</li><li>Rapport annuel aux donateurs : biens immobilisés, fruits, bénéficiaires.</li></ul></div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 16 FISCALITE DONS -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Fiscalité des dons</span>
+  <h2>Dons déductibles à <em>66 %</em></h2></div>
+  <div class="body">
+    <div class="grid g3">
+      <div class="card navy"><h3>Ce que gagne le donateur</h3><ul class="b">
+        <li>Particulier : réduction d'impôt de 66 % du don, dans la limite de 20 % du revenu imposable<span class="ref" data-s="30">30</span> (CGI, art. 200).</li>
+        <li>Entreprise : réduction d'IS de 60 % du versement<span class="ref" data-s="52">52</span> (CGI, art. 238 bis), dans la limite de 20 000 € ou de 0,5 % du CA (texte de référence).</li>
+        <li>Exemple : un don de 1 000 € coûte 340 € net à un particulier imposable ; un mécénat de 10 000 € coûte 4 000 € à une entreprise.</li></ul></div>
+      <div class="card"><h3>Le rescrit mécénat</h3><ul class="b">
+        <li>L'administration dispose de 6 mois à compter du dossier complet<span class="ref" data-s="33">33</span>.</li>
+        <li>Contrairement au rescrit général, l'absence de réponse vaut accord tacite<span class="ref" data-s="34">34</span>.</li>
+        <li>Faute de réponse dans les 6 mois, l'amende de l'article 1740 A du CGI n'est pas applicable<span class="ref" data-s="33">33</span>.</li>
+        <li><b>Calendrier :</b> dépôt avant le gala du 28/11/2026 ; accord exprès ou tacite fin mai 2027 au plus tard. Reçus des dons du gala émis après accord, ou par une structure déjà habilitée.</li></ul></div>
+      <div class="card"><h3>Obligations déclaratives</h3><ul class="b">
+        <li>Déclaration préalable en préfecture dès que les dons collectés par appel à la générosité du public dépassent 153 000 € sur l'exercice ou l'un des deux précédents, et compte d'emploi annuel des ressources<span class="ref" data-s="35">35</span>.</li>
+        <li>Déclaration annuelle du montant des dons et du nombre de reçus délivrés (CGI, art. 222 bis, créé par la loi du 24 août 2021)<span class="ref" data-s="37">37</span>.</li>
+        <li>Déclaration des dons de l'étranger au-delà de 153 000 € de dons<span class="ref" data-s="38">38</span>.</li></ul></div>
+    </div>
+    <div class="grid g2">
+      <div class="card gold"><h3>Rendre l'association éligible : la règle des « 4P »</h3><p>L'activité non lucrative se démontre par le <b>produit</b> (accompagnement éducatif, pas seulement un poste de travail), le <b>public</b> (étudiants et jeunes sur critères sociaux), le <b>prix</b> (gratuité ou tarif nettement inférieur au marché) et la <b>publicité</b> (information, pas de démarche commerciale). C'est pourquoi le programme de bourses et de mentorat est porté par l'association, et l'offre commerciale par la SAS.</p></div>
+      <div class="card red"><h3>Pièges à éviter</h3><ul class="b">
+        <li>Contreparties aux donateurs : uniquement de faible valeur (mur des fondateurs, invitation) ; pas d'abonnement gratuit en échange d'un don.</li>
+        <li>Émettre des reçus avant d'être sûr de l'éligibilité : sanction fiscale en cas de délivrance à tort<span class="ref" data-s="33">33</span>.</li>
+        <li>Annoncer en préfecture des objectifs d'appel à la générosité trop étroits : l'affectation au fonds de dotation doit y figurer<span class="ref" data-s="35">35</span>.</li></ul></div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- FISC -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Avantages fiscaux</span>
+  <h2>Tous les <em>avantages fiscaux</em></h2></div>
+  <div class="body">
+    <div class="grid g3">
+      <div class="card navy"><div class="kpl">Particuliers</div><div class="kpi">66 %</div><p>de réduction d'impôt, dans la limite de 20 % du revenu imposable<span class="ref" data-s="30">30</span>. Un don de 1 000 € coûte 340 €. Excédent reportable sur 5 ans (CGI, art. 200).</p></div>
+      <div class="card navy"><div class="kpl">Entreprises</div><div class="kpi">60 %</div><p>de réduction d'IS<span class="ref" data-s="52">52</span>, plafond de 20 000 € ou 0,5 % du CA (CGI, art. 238 bis). Valable aussi pour le <b>mobilier donné</b> et le <b>mécénat de compétences</b>.</p></div>
+      <div class="card navy"><div class="kpl">Bénévoles</div><div class="kpi">66 %</div><p>sur les frais engagés et non remboursés (transport, achats), s'ils renoncent au remboursement : c'est un don (CGI, art. 200).</p></div>
+      <div class="card"><div class="kpl">Legs et donations</div><div class="kpi" style="font-size:22px">0 € de droits</div><p>Le fonds de dotation peut recevoir legs et donations en exonération de droits de mutation<span class="ref" data-s="53">53</span> : levier clé pour acheter les murs.</p></div>
+      <div class="card"><div class="kpl">Taxe sur les salaires</div><div class="kpi" style="font-size:22px">24 256 €</div><p>d'abattement en 2026 pour les associations<span class="ref" data-s="58">58</span> : avec 4 salariés au SMIC, l'association ne paie en pratique rien.</p></div>
+      <div class="card"><div class="kpl">Embauche</div><div class="kpi" style="font-size:22px">2 000 à 5 000 €</div><p>d'aide par apprenti (dispositif 2026, contrats conclus jusqu'au 31/12/2026)<span class="ref" data-s="59">59</span>. Reconduction 2027 et éligibilité des associations à vérifier.</p></div>
+    </div>
+    <div class="card teal" style="padding:8px 14px"><b>Aussi :</b> réduction générale des cotisations patronales jusqu'à 3 SMIC (RGDU) ; franchise des impôts commerciaux pour les petites recettes lucratives accessoires de l'association (seuil indexé, art. 206-1 bis CGI) ; exonération de TVA du secteur non lucratif.</div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+<!-- BONS -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Bons plans</span>
+  <h2>Les <em>bons plans</em> à négocier</h2></div>
+  <div class="body">
+    <div class="grid g3">
+      <div class="card gold"><div class="kpl">Bail ferme 6 ans</div><div class="kpi">6 à 12 mois</div><p>de loyer gratuit à viser. À Paris intra-muros, les « mesures d'accompagnement » atteignent 18 à 24 % du loyer sur la durée ferme (bureaux, T2 2026)<span class="ref" data-s="54">54</span>, soit jusqu'à 14-17 mois sur 6 ans. Moins sur les petites surfaces commerciales.</p></div>
+      <div class="card gold"><div class="kpl">Loi du 26 mai 2026</div><div class="kpi">Loyer mensuel</div><p>Paiement mensuel de droit pour les baux commerciaux, garanties plafonnées à 3 mois de loyer pour les baux conclus depuis le 26/05/2026<span class="ref" data-s="55">55</span>. Texte à vérifier sur Légifrance.</p></div>
+      <div class="card gold"><div class="kpl">Wikivillage</div><div class="kpi">0 €</div><p>de frais d'entrée et de droit au bail<span class="ref" data-s="14">14</span>. Accès possible aux salles mutualisées du tiers-lieu.</p></div>
+      <div class="card"><div class="kpl">Bailleurs sociaux</div><div class="kpi" style="font-size:22px">≈ 6 800 locaux</div><p>Paris Habitat, RIVP et Elogie-SIEMP, en pied d'immeuble, via le GIE Paris Commerces, destinés notamment aux associations<span class="ref" data-s="56">56</span>. Formulaire « besoin de locaux » de la Ville de Paris.</p></div>
+      <div class="card"><div class="kpl">Occupation temporaire</div><div class="kpi" style="font-size:22px">20 €/m²/mois</div><p>Tarif ESS de Plateau Urbain hors QPV<span class="ref" data-s="41">41</span> : idéal pour le scénario 3.</p></div>
+      <div class="card"><div class="kpl">À demander au bailleur</div><div class="kpi" style="font-size:22px">Travaux, option d'achat</div><p>Participation aux travaux, mensualisation, clause de préemption ou d'option d'achat des murs au profit du fonds.</p></div>
+    </div>
+    <div class="card teal" style="padding:8px 14px"><b>Réduire le budget :</b> mobilier de réemploi donné par des entreprises qui déménagent (mécénat en nature), architecte et avocat en mécénat de compétences, accompagnement gratuit des structures ESS par le dispositif local d'accompagnement (à vérifier).</div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 17 RISQUES FISCAUX -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Sécurisation juridique et fiscale</span>
+  <h2><em>10 risques</em>, 10 parades</h2></div>
+  <div class="body">
+    <table>
+      <tr><th style="width:250px">Risque</th><th>Origine</th><th>Parade</th><th class="n" style="width:80px">Gravité</th></tr>
+      <tr><td>Perte de l'éligibilité au mécénat</td><td>Activité lucrative prépondérante dans l'association</td><td>Filialisation (option 2), tarifs sociaux sur critères, rescrit déposé sur la base du seul programme non lucratif</td><td class="n"><span class="tag ko">élevée</span></td></tr>
+      <tr><td>Requalification en lieu de culte (ERP type V)</td><td>Prière ouverte au public, prière du vendredi, fréquentation extérieure<span class="ref" data-s="23">23</span></td><td>Règlement intérieur : usage réservé aux usagers présents, effectif plafonné, pas d'annonce publique</td><td class="n"><span class="tag ko">élevée</span></td></tr>
+      <tr><td>Association qualifiée de « mixte »</td><td>Activités en relation avec l'exercice public d'un culte<span class="ref" data-s="24">24</span></td><td>Aucune organisation de cérémonie ; aucun imam rémunéré ; financement de l'espace hors dons défiscalisés</td><td class="n"><span class="tag">moyenne</span></td></tr>
+      <tr><td>« Cercle restreint » (gratuité TW3 et OMAS)</td><td>L'administration examine la finalité et le public réellement bénéficiaire, l'adhésion seule n'étant pas déterminante<span class="ref" data-s="62">62</span></td><td>Lieu ouvert à tous ; adhésion à TW3 et à l'OMAS ouverte ; gratuité justifiée par l'objet éducatif, plafonnée par un quota</td><td class="n"><span class="tag ko">élevée</span></td></tr>
+      <tr><td>Contrepartie aux donateurs</td><td>Un donateur membre de TW3 ou de l'OMAS reçoit un accès gratuit d'une valeur d'environ 1 900 €/an</td><td>Gratuité attachée à la qualité de membre actif, jamais au don ; membres donateurs sans avantage lié au don ; avis de l'avocat fiscaliste</td><td class="n"><span class="tag ko">élevée</span></td></tr>
+      <tr><td>Discrimination dans l'accès</td><td>Réserver le lieu ou la salle à une confession</td><td>Accès universel, conditions générales identiques pour tous, espace dénommé « recueillement »</td><td class="n"><span class="tag">moyenne</span></td></tr>
+      <tr><td>Reçus fiscaux émis à tort</td><td>Collecte avant clarification de l'éligibilité</td><td>Rescrit immédiat, reçus émis après accord exprès ou tacite ; à défaut, collecte via un organisme déjà habilité (fondation abritante)</td><td class="n"><span class="tag">moyenne</span></td></tr>
+      <tr><td>Contrôle sur place des reçus</td><td>Pouvoir de contrôle de l'administration sur la régularité des reçus<span class="ref" data-s="37">37</span></td><td>Numérotation continue des reçus, rapprochement banque/reçus, archives sur 6 ans</td><td class="n"><span class="tag ok">faible</span></td></tr>
+      <tr><td>Partenariats publics impossibles</td><td>Fonds de dotation exclu des subventions<span class="ref" data-s="26">26</span> ; contrat d'engagement républicain exigé des associations<span class="ref" data-s="38">38</span></td><td>Partenariats universitaires conclus par l'association (A) ou la SAS (C), jamais par le fonds</td><td class="n"><span class="tag ok">faible</span></td></tr>
+      <tr><td>Exposition médiatique ou politique</td><td>Projet confessionnel perçu comme fermé</td><td>Lieu ouvert à tous, gouvernance transparente, comptes publiés, partenariats ESS (Wikivillage, BDE, mairie d'arrondissement)</td><td class="n"><span class="tag">moyenne</span></td></tr>
+    </table>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 18 BUDGET -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Budget de lancement (scénario A, Wikivillage)</span>
+  <h2>Budget de lancement : <em>379 k€</em></h2></div>
+  <div class="body">
+    <div class="grid" style="grid-template-columns:1.25fr 1fr">
+      <table>
+        <tr><th>Poste</th><th class="n">Montant HT</th><th>Nature</th></tr>
+        <tr><td>Aménagement et second œuvre, 325 m² à environ 350 €/m² (cloisons acoustiques, électricité, éclairage, sanitaires, recueillement et ablutions)</td><td class="n">115 000 €</td><td>Bien waqf</td></tr>
+        <tr><td>Mobilier modulable (67 postes, 120 chaises empilables, tables pliantes, 3 booths)</td><td class="n">55 000 €</td><td>Bien waqf</td></tr>
+        <tr><td>Audiovisuel, wifi professionnel, contrôle d'accès QR, caméras</td><td class="n">20 000 €</td><td>Bien waqf</td></tr>
+        <tr><td>Maîtrise d'œuvre, bureau de contrôle, dossier AT, diagnostics</td><td class="n">14 000 €</td><td>Bien waqf</td></tr>
+        <tr><td>Dotation initiale du fonds (part permanente minimale)</td><td class="n">15 000 €</td><td>Waqf</td></tr>
+        <tr><td>Dépôt de garantie (3 mois)<span class="ref" data-s="14">14</span></td><td class="n">21 700 €</td><td>Créance du waqf</td></tr>
+        <tr><td>Juridique et fiscal (3 statuts, rescrit, bail, CGV, RGPD, avis charia)</td><td class="n">12 000 €</td><td>Lancement</td></tr>
+        <tr><td>Communication et collecte (plateforme, vidéo, impression)</td><td class="n">8 000 €</td><td>Lancement</td></tr>
+        <tr><td>Recrutement et formations (incendie, secourisme)</td><td class="n">3 000 €</td><td>Lancement</td></tr>
+        <tr><td>Loyers avant ouverture, après franchise de 3 mois négociée</td><td class="n">17 000 €</td><td>Lancement</td></tr>
+        <tr><td>Salaires avant ouverture (juillet-août 2027)</td><td class="n">11 000 €</td><td>Lancement</td></tr>
+        <tr><td>Pertes d'exploitation des 6 premiers mois</td><td class="n">38 000 €</td><td>Lancement</td></tr>
+        <tr><td>Trésorerie de sécurité (2 mois de charges)</td><td class="n">49 000 €</td><td>Réserve</td></tr>
+        <tr class="tot"><td>Besoin total</td><td class="n">378 700 €</td><td></td></tr>
+        <tr class="hl"><td>Objectif cumulé de levée (voir plan de financement)</td><td class="n">380 000 €</td><td></td></tr>
+      </table>
+      <div class="col">
+        <div class="card"><h3>Répartition</h3>
+          <div class="bars">
+            <div class="row" style="grid-template-columns:150px 1fr 60px"><span>Biens immobilisés</span><div class="bar" style="width:54%;background:var(--gold)"></div><span class="v">204 k€</span></div>
+            <div class="row" style="grid-template-columns:150px 1fr 60px"><span>Dotation + dépôt</span><div class="bar" style="width:10%;background:var(--navy)"></div><span class="v">37 k€</span></div>
+            <div class="row" style="grid-template-columns:150px 1fr 60px"><span>Frais de lancement</span><div class="bar" style="width:23%;background:var(--teal)"></div><span class="v">89 k€</span></div>
+            <div class="row" style="grid-template-columns:150px 1fr 60px"><span>Réserve</span><div class="bar" style="width:13%;background:#8a96a8"></div><span class="v">49 k€</span></div>
+          </div></div>
+        <div class="card teal"><h3>Lecture « waqf »</h3><p>Les biens immobilisés, la dotation et le dépôt (environ 241 k€) forment la <b>dotation permanente</b>. Les frais de lancement et les pertes initiales relèvent d'une <b>dotation consomptible</b> expressément prévue aux statuts<span class="ref" data-s="28">28</span>.</p></div>
+        <div class="card gold"><h3>Palier minimum viable : 250 k€</h3><p>Mobilier de réemploi, aménagement allégé (environ 220 €/m²), trésorerie d'un mois : ouverture possible, mais sans droit à l'erreur sur le remplissage.</p></div>
+        <p class="note">Montants estimés hors TVA, à confirmer par devis. TVA récupérable par la SAS d'exploitation si c'est elle qui porte les travaux.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 19 P&L -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Compte d'exploitation mensuel cible (mois 12)</span>
+  <h2>Le lieu <em>s'autofinance</em></h2></div>
+  <div class="body" style="font-size:11.8px;line-height:1.38">
+    <div class="grid g2">
+      <table>
+        <tr><th>Recettes (HT)</th><th class="n">Volume</th><th class="n">€/mois</th></tr>
+        <tr><td>Illimités étudiants (82,50 €)</td><td class="n">50</td><td class="n">4 125</td></tr>
+        <tr><td>Illimités jeunes actifs (132,50 €)</td><td class="n">35</td><td class="n">4 638</td></tr>
+        <tr><td>Pass 10 jours (65,83 €)</td><td class="n">30</td><td class="n">1 975</td></tr>
+        <tr><td>Résidents poste fixe (241,67 €)</td><td class="n">10</td><td class="n">2 417</td></tr>
+        <tr><td>Accès à l'heure</td><td class="n">600 h</td><td class="n">1 500</td></tr>
+        <tr><td>Salles Studio et Agora (environ 25 % d'occupation)</td><td class="n">–</td><td class="n">2 500</td></tr>
+        <tr class="hl"><td>Grande salle : <b>8 locations par mois</b> (4 soirées associatives à 500 €, 2 journées entreprise à 1 800 €, 2 conférences à 800 €)</td><td class="n">8</td><td class="n">7 200</td></tr>
+        <tr><td>Domiciliation (32,50 €)</td><td class="n">30</td><td class="n">975</td></tr>
+        <tr><td>Conventions universités, BDE, associations</td><td class="n">–</td><td class="n">1 500</td></tr>
+        <tr><td>Marge café et snacks</td><td class="n">–</td><td class="n">600</td></tr>
+        <tr class="tot"><td>Total recettes</td><td></td><td class="n">27 430</td></tr>
+      </table>
+      <table>
+        <tr><th>Charges (HT)</th><th class="n">€/mois</th></tr>
+        <tr><td>Loyer HT HC (325 m², 289 €/m²/an)<span class="ref" data-s="14">14</span></td><td class="n">7 834</td></tr>
+        <tr><td>Charges locatives (7,33 €/m²/an)<span class="ref" data-s="14">14</span></td><td class="n">199</td></tr>
+        <tr><td>Taxe foncière et TEOM refacturées <span class="tag est">est.</span></td><td class="n">540</td></tr>
+        <tr><td>Masse salariale chargée (4 postes)</td><td class="n">9 300</td></tr>
+        <tr><td>Ménage quotidien externalisé</td><td class="n">1 500</td></tr>
+        <tr><td>Énergie (bâtiment DPE B)</td><td class="n">900</td></tr>
+        <tr><td>Expert-comptable et CAC (3 entités)</td><td class="n">900</td></tr>
+        <tr><td>Consommables (café, thé, papier)</td><td class="n">600</td></tr>
+        <tr><td>Marketing et communauté</td><td class="n">500</td></tr>
+        <tr><td>Assurances, maintenance, vérifications ERP</td><td class="n">550</td></tr>
+        <tr><td>Logiciels (accès, réservation), fibre, divers</td><td class="n">600</td></tr>
+        <tr><td>Provision pour imprévus (5 %)</td><td class="n">1 170</td></tr>
+        <tr class="tot"><td>Total charges</td><td class="n">24 593</td></tr>
+        <tr class="hl"><td>Excédent mensuel (réinvesti)</td><td class="n">≈ 2 840</td></tr>
+      </table>
+    </div>
+    <div class="grid g3">
+      <div class="card teal"><h3>Où va l'excédent</h3><p><b>≈ 34 k€/an</b> réinvestis : réserve, bourses étudiantes, épargne pour acheter les murs. <b>0 € distribué.</b></p></div>
+      <div class="card"><h3>Capacité utilisée</h3><p>125 abonnés pour 67 postes, soit un ratio de 1,9 abonné par poste, usuel pour des formules flexibles <span class="tag est">hypothèse</span>. Le pic de présence se situe entre 14h et 18h.</p></div>
+      <div class="card gold"><h3>Sensibilité clé</h3><p>Passer de 8 à 4 événements par mois retire 3,6 k€ et ramène le lieu à l'équilibre. L'événementiel est donc le premier indicateur suivi.</p></div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- GRATUITE -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Gratuité des membres</span>
+  <h2>Gratuit pour TW3 et l'OMAS : <em>l'impact</em></h2></div>
+  <div class="body">
+    <div class="grid g3">
+      <div class="card red"><div class="kpl">A · 40 membres gratuits, sans compensation</div><div class="kpi">−0,6 k€<small style="font-size:13px;color:var(--muted)"> /mois</small></div><p>Recettes 24,0 k€ pour 24,6 k€ de charges. Équilibre à peine atteint au 13e mois, pertes de démarrage <b>jamais compensées</b>.</p></div>
+      <div class="card green" style="border:2px solid var(--green)"><div class="kpl">B · Quota de 25 places gratuites <span class="tag ok">recommandé</span></div><div class="kpi">+0,5 k€<small style="font-size:13px;color:var(--muted)"> /mois</small></div><p>Recettes 25,1 k€. Rentable chaque mois dès le <b>9e mois</b>. Le quota tourne : réservation en ligne, priorité aux élèves et bénévoles actifs.</p></div>
+      <div class="card gold"><div class="kpl">C · 40 gratuits + participation des associations</div><div class="kpi">+0,7 k€<small style="font-size:13px;color:var(--muted)"> /mois</small></div><p>TW3 et l'OMAS versent 30 € par membre et par mois au lieu (1 200 €/mois). Rentable dès le <b>9e mois</b>.</p></div>
+    </div>
+    <div class="grid g2">
+      <div class="card"><h3>Hypothèses</h3><ul class="b">
+        <li>Base sans gratuité : 27,4 k€ de recettes, excédent de 2,8 k€/mois.</li>
+        <li>Les membres gratuits remplacent surtout des étudiants payants (82,50 € HT) et quelques actifs (132,50 € HT).</li>
+        <li>A : 25 étudiants et 10 actifs en moins. B : 20 étudiants et 5 actifs en moins.</li>
+        <li>Les salles, événements et domiciliations restent payants pour tous.</li></ul>
+        <p class="note">Estimations ; à recalculer avec le nombre réel de membres actifs à Paris. <span class="tag est">estimation</span></p></div>
+      <div class="card red"><h3>Vigilance fiscale</h3><ul class="b">
+        <li>La gratuité doit découler de la <b>qualité de membre actif</b> et de l'objet éducatif, jamais du don : un accès gratuit d'environ 1 900 €/an accordé en échange d'un don serait une contrepartie excessive.</li>
+        <li>Le lieu reste ouvert à tous et l'adhésion à TW3 et à l'OMAS reste ouverte, pour écarter le « cercle restreint »<span class="ref" data-s="62">62</span>.</li>
+        <li>Formaliser la gratuité par une convention entre les associations et la structure d'exploitation.</li></ul></div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 20 MONTEE EN CHARGE -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Montée en charge et scénarios</span>
+  <h2>Équilibre au <em>6e mois</em></h2></div>
+  <div class="body">
+    <div class="grid" style="grid-template-columns:1.4fr 1fr">
+      <div class="card"><h3>Recettes mensuelles et charges, septembre 2027 à août 2028 (k€ HT)</h3>
+        <svg viewBox="0 0 680 290" width="100%" height="290" font-family="Inter" font-size="10">
+          <g stroke="#E4DDCC"><line x1="40" y1="20" x2="670" y2="20"/><line x1="40" y1="80" x2="670" y2="80"/><line x1="40" y1="140" x2="670" y2="140"/><line x1="40" y1="200" x2="670" y2="200"/><line x1="40" y1="260" x2="670" y2="260"/></g>
+          <g fill="#5B6676" text-anchor="end"><text x="34" y="24">32</text><text x="34" y="84">24</text><text x="34" y="144">16</text><text x="34" y="204">8</text><text x="34" y="264">0</text></g>
+          <g fill="#13294B">
+            <rect x="52" y="208" width="34" height="52"/><rect x="104" y="147" width="34" height="113"/><rect x="156" y="116" width="34" height="144"/><rect x="208" y="96" width="34" height="164"/><rect x="260" y="96" width="34" height="164"/><rect x="312" y="75" width="34" height="185"/><rect x="364" y="69" width="34" height="191"/><rect x="416" y="65" width="34" height="195"/><rect x="468" y="58" width="34" height="202"/><rect x="520" y="54" width="34" height="206"/><rect x="572" y="54" width="34" height="206"/><rect x="624" y="74" width="34" height="186"/>
+          </g>
+          <line x1="40" y1="75.5" x2="670" y2="75.5" stroke="#B42318" stroke-width="2" stroke-dasharray="6 4"/>
+          <text x="668" y="70" fill="#B42318" text-anchor="end" font-weight="700">Charges 24,6 k€</text>
+          <g fill="#5B6676" text-anchor="middle"><text x="69" y="276">sept</text><text x="121" y="276">oct</text><text x="173" y="276">nov</text><text x="225" y="276">déc</text><text x="277" y="276">janv</text><text x="329" y="276">févr</text><text x="381" y="276">mars</text><text x="433" y="276">avr</text><text x="485" y="276">mai</text><text x="537" y="276">juin</text><text x="589" y="276">juil</text><text x="641" y="276">août</text></g>
+          <g fill="#fff" text-anchor="middle" font-weight="700" font-size="9"><text x="69" y="222">6,9</text><text x="121" y="162">15,1</text><text x="173" y="130">19,2</text><text x="225" y="110">21,9</text><text x="277" y="110">21,9</text><text x="329" y="89">24,7</text><text x="381" y="83">25,5</text><text x="433" y="79">26,0</text><text x="485" y="72">26,9</text><text x="537" y="68">27,4</text><text x="589" y="68">27,4</text><text x="641" y="88">24,8</text></g>
+        </svg>
+        <p class="note">Montée en charge : 25 % du CA cible le 1er mois, 55 % le 2e, 70 % le 3e, 80 % les 4e et 5e, puis 90 à 100 %. Août en léger retrait (vacances). Déficit cumulé des 5 premiers mois : environ 38 k€, couvert par la levée.</p></div>
+      <div class="col">
+        <table>
+          <tr><th>Scénario (régime de croisière)</th><th class="n">CA</th><th class="n">Résultat/mois</th></tr>
+          <tr><td>Pessimiste : CA −20 %</td><td class="n">21,9 k€</td><td class="n" style="color:var(--red);font-weight:700">−2,7 k€</td></tr>
+          <tr class="hl"><td>Central</td><td class="n">27,4 k€</td><td class="n">+2,8 k€</td></tr>
+          <tr><td>Optimiste : CA +15 %</td><td class="n">31,5 k€</td><td class="n" style="color:var(--green);font-weight:700">+6,9 k€</td></tr>
+        </table>
+        <div class="card red"><h3>Si le scénario pessimiste se réalise</h3><ul class="b"><li>La réserve de 49 k€ couvre 18 mois de déficit.</li><li>Leviers : un salarié à temps partiel en moins, +4 événements par mois, prix jeune actif à 179 €.</li></ul></div>
+        <div class="card green"><h3>Indicateurs mensuels suivis</h3><ul class="b"><li>Abonnés actifs et taux de résiliation.</li><li>Nombre d'événements et revenu moyen par événement.</li><li>Occupation des salles et pic de présence.</li><li>Nombre de boursiers accueillis.</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- TEAM -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Équipe projet</span>
+  <h2><em>4 personnes</em> suffisent</h2></div>
+  <div class="body">
+    <div class="grid g4">
+      <div class="card navy"><div class="kpl">Rôle 1</div><h3 style="font-size:17px">Pilote juridique et administratif</h3><div class="big" style="color:#fff;font-size:24px">6-8 h <small style="color:#c8d3e6">/semaine</small></div><ul class="b" style="margin-top:6px">
+        <li>Statuts du fonds de dotation et de la SAS</li><li>Rescrit, déclarations, reçus</li><li>Bail, dossier ERP avec l'architecte</li><li>Comité charia, conformité</li></ul></div>
+      <div class="card"><div class="kpl">Rôle 2</div><h3 style="font-size:17px">Finances et levée de fonds</h3><div class="big" style="font-size:24px">6-8 h <small>/semaine</small></div><ul class="b" style="margin-top:6px">
+        <li>Suivi du gala, relances donateurs</li><li>Levée 2 avec le réseau OMAS</li><li>Mécénat d'entreprises et en nature</li><li>Prêts sans intérêt, trésorerie, budget</li></ul></div>
+      <div class="card"><div class="kpl">Rôle 3</div><h3 style="font-size:17px">Immobilier et travaux</h3><div class="big" style="font-size:24px">5-6 h <small>/semaine, 10 h en travaux</small></div><ul class="b" style="margin-top:6px">
+        <li>Recherche, visites, négociation (franchise)</li><li>Architecte, bureau de contrôle</li><li>Suivi de chantier, mobilier</li><li>Prière et ablutions : cahier des charges</li></ul></div>
+      <div class="card"><div class="kpl">Rôle 4</div><h3 style="font-size:17px">Communauté et commercial</h3><div class="big" style="font-size:24px">4-6 h <small>/semaine</small></div><ul class="b" style="margin-top:6px">
+        <li>Membres TW3 et OMAS bénéficiaires</li><li>BDE, universités, enquête besoins</li><li>Préventes, réseaux sociaux</li><li>Recrutement des 4 salariés</li></ul></div>
+    </div>
+    <div class="grid g2">
+      <div class="card teal"><h3>Rituel</h3><p>Point de 1 h chaque semaine, tableau de suivi partagé (SharePoint), revue mensuelle avec le bureau de TW3.</p></div>
+      <div class="card gold"><h3>Appuis ponctuels</h3><p>Comité charia (4 réunions), avocat fiscaliste, expert-comptable, architecte. Idéalement en <b>mécénat de compétences</b> (réduction d'impôt de 60 % pour leur entreprise).</p></div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 21 RH -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Organisation et ressources humaines</span>
+  <h2><em>4 salariés</em>, 7h-23h, 7j/7</h2></div>
+  <div class="body">
+    <div class="grid" style="grid-template-columns:1.1fr 1fr">
+      <div class="col">
+        <table>
+          <tr><th>Poste</th><th>Contrat</th><th>Missions</th><th class="n">Coût chargé/mois</th></tr>
+          <tr><td><b>Responsable du lieu</b></td><td>CDI 35 h</td><td>Direction opérationnelle, bailleur, sécurité ERP, budget, partenariats</td><td class="n">3 650 €</td></tr>
+          <tr><td><b>Chargé·e communauté et événements</b></td><td>CDI 35 h</td><td>Commercialisation des salles, programmation, BDE et universités</td><td class="n">2 950 €</td></tr>
+          <tr><td><b>Chargé·e d'accueil soir et samedi</b></td><td>CDI 24 h</td><td>Accueil, encaissement, fermeture à 23h, consignes de sécurité</td><td class="n">1 450 €</td></tr>
+          <tr><td><b>Étudiants vacataires</b> (2 × 10 h)</td><td>CDD étudiant</td><td>Dimanche et renforts lors des événements</td><td class="n">1 250 €</td></tr>
+          <tr class="tot"><td>Total</td><td colspan="2">Environ 3,3 ETP</td><td class="n">9 300 €</td></tr>
+        </table>
+        <p class="note">Base SMIC de 1 867,02 € brut mensuel au 1er juin 2026<span class="ref" data-s="39">39</span>. Coûts chargés estimés après réduction générale de cotisations ; à affiner avec le gestionnaire de paie et la convention collective applicable.</p>
+        <div class="card gold"><h3>Bénévolat encadré</h3><p>Mentors et intervenants bénévoles relèvent de l'association (programme d'intérêt général), jamais de l'exploitation commerciale de la SAS, pour éviter tout risque de requalification en travail dissimulé.</p></div>
+      </div>
+      <div class="card"><h3>Couverture type d'une semaine (7h-23h)</h3>
+        <div style="display:grid;grid-template-columns:52px repeat(16,1fr);gap:2px;font-size:9.5px;margin-top:6px">
+          <div></div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div>
+        </div>
+        <div id="cov" style="display:grid;grid-template-columns:52px repeat(16,1fr);gap:2px;font-size:10px;margin-top:3px"></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:10.5px">
+          <span><i style="display:inline-block;width:10px;height:10px;background:#13294B;border-radius:2px"></i> Responsable</span>
+          <span><i style="display:inline-block;width:10px;height:10px;background:#0F766E;border-radius:2px"></i> Communauté</span>
+          <span><i style="display:inline-block;width:10px;height:10px;background:#B8892B;border-radius:2px"></i> Accueil</span>
+          <span><i style="display:inline-block;width:10px;height:10px;background:#8a96a8;border-radius:2px"></i> Vacataires</span>
+          <span><i style="display:inline-block;width:10px;height:10px;background:#E4DDCC;border-radius:2px"></i> Accès autonome QR</span>
+        </div>
+        <p class="note" style="margin-top:8px">Hors présence salariée : accès réservé aux abonnés, vidéoprotection et astreinte téléphonique. Lors des événements de plus de 50 personnes, présence d'au moins deux salariés formés et d'un agent de sécurité refacturé au client.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 22 FRISE -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Feuille de route</span>
+  <h2>Décembre 2026 → <em>ouverture</em></h2></div>
+  <div class="body">
+    <div class="gantt" id="gantt"></div>
+    <div style="display:flex;gap:16px;font-size:10.5px;align-items:center;flex-wrap:wrap">
+      <span><i style="display:inline-block;width:12px;height:8px;background:#13294B;border-radius:2px"></i> Juridique</span>
+      <span><i style="display:inline-block;width:12px;height:8px;background:#B8892B;border-radius:2px"></i> Financement</span>
+      <span><i style="display:inline-block;width:12px;height:8px;background:#B42318;border-radius:2px"></i> Chemin critique</span>
+      <span><i style="display:inline-block;width:12px;height:8px;background:#0F766E;border-radius:2px"></i> Équipe et repli</span>
+      <span style="color:#B42318;font-weight:800">◆</span><span>Jalon / porte de décision</span>
+      <span class="note" style="margin-left:auto">Ramadan 1448 : environ du 8 février au 9 mars 2027 (dates à confirmer).</span>
+    </div>
+    <div class="grid g3" style="font-size:11.5px">
+      <div class="card red" style="padding:8px 12px"><b>Risque administratif n°1 :</b> AT de 4 mois<span class="ref" data-s="21">21</span>. Bail signé fin avril au plus tard pour ouvrir en septembre.</div>
+      <div class="card gold" style="padding:8px 12px"><b>Risque financier n°1 :</b> levée 2 insuffisante. Porte de décision au 31 mars : S1, S2 ou S3.</div>
+      <div class="card teal" style="padding:8px 12px"><b>Risque local :</b> Wikivillage indisponible. Recherche en parallèle via le GIE Paris Commerces<span class="ref" data-s="56">56</span>.</div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+
+<!-- 23 CHECKLIST -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Plan administratif complet</span>
+  <h2>Toutes les <em>formalités</em></h2></div>
+  <div class="body">
+    <div class="grid g4" style="font-size:11.2px">
+      <div class="card"><h3>A · Association</h3><ul class="b">
+        <li>Statuts : objet éducatif et social, gestion désintéressée, dévolution</li>
+        <li>Déclaration au greffe des associations et publication au JOAFE</li>
+        <li>SIRET, compte bancaire, registre spécial</li>
+        <li>Rescrit mécénat (LPF, art. L80 C)<span class="ref" data-s="33">33</span></li>
+        <li>Déclaration préalable d'appel à la générosité du public<span class="ref" data-s="35">35</span></li>
+        <li>Modèle de reçu fiscal et numérotation</li>
+        <li>Déclaration annuelle des dons (art. 222 bis)<span class="ref" data-s="37">37</span></li>
+        <li>Compte d'emploi annuel des ressources<span class="ref" data-s="35">35</span></li>
+        <li>Contrat d'engagement républicain si subvention<span class="ref" data-s="38">38</span></li>
+        <li>Assurance RC, règlement du programme de bourses</li></ul></div>
+      <div class="card"><h3>B · Fonds de dotation</h3><ul class="b">
+        <li>Statuts : objet, dotation permanente et consomptible, remploi, dévolution</li>
+        <li>Versement de la dotation minimale de 15 000 €<span class="ref" data-s="28">28</span></li>
+        <li>Déclaration en préfecture et publication au JO<span class="ref" data-s="27">27</span></li>
+        <li>Désignation du CA (nâzir) et du comité charia</li>
+        <li>Commissaire aux comptes et suppléant<span class="ref" data-s="26">26</span></li>
+        <li>Rapport annuel au préfet sous 6 mois<span class="ref" data-s="26">26</span></li>
+        <li>Publication des comptes annuels</li>
+        <li>Autorisation préfectorale si collecte directe<span class="ref" data-s="36">36</span></li>
+        <li>Acte de dotation avec clause d'inaliénabilité</li></ul></div>
+      <div class="card"><h3>C · SAS d'exploitation</h3><ul class="b">
+        <li>Statuts, capital, immatriculation, Kbis</li>
+        <li>Régimes TVA, IS et CFE</li>
+        <li>Bail commercial (destination, franchise, condition suspensive)</li>
+        <li>Assurances multirisque et RC organisateur</li>
+        <li>CGV, règlement intérieur, charte des privatisations</li>
+        <li>RGPD : registre, mentions, contrôle d'accès</li>
+        <li>Embauches : DPAE, contrats, mutuelle, médecine du travail, DUERP, registre du personnel</li>
+        <li>Agrément ESUS (option)</li></ul></div>
+      <div class="card"><h3>ERP, urbanisme, conventions</h3><ul class="b">
+        <li>Autorisation de travaux ERP (Cerfa 13824)<span class="ref" data-s="21">21</span></li>
+        <li>Déclaration préalable façade et enseigne</li>
+        <li>Vérifications techniques initiales, registre de sécurité</li>
+        <li>Autorisation d'ouverture (maire ou Préfecture de police)<span class="ref" data-s="21">21</span></li>
+        <li>Registre public d'accessibilité</li>
+        <li>Conventions A → B, B → C, A ↔ C</li>
+        <li>Conventions universités et BDE</li>
+        <li>Contrats ménage, maintenance, accès</li>
+        <li>Prêts sans intérêt écrits (déclaration fiscale au-delà de 5 000 €, à vérifier)</li></ul></div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 24 LEVEE -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Plan de financement</span>
+  <h2>De <em>70 k€</em> à <em>380 k€</em></h2></div>
+  <div class="body">
+    <div class="grid" style="grid-template-columns:1.2fr 1fr">
+      <div class="card"><h3>Sources visées (scénario 1)</h3>
+        <div class="bars">
+          <div class="row" style="grid-template-columns:230px 1fr 60px"><span><b>Gala TW3, 28/11/2026</b></span><div class="bar" style="width:58%;background:var(--navy)"></div><span class="v">70 k€</span></div>
+          <div class="row" style="grid-template-columns:230px 1fr 60px"><span>Levée 2 : réseau OMAS + Ramadan</span><div class="bar" style="width:100%;background:var(--gold)"></div><span class="v">120 k€</span></div>
+          <div class="row" style="grid-template-columns:230px 1fr 60px"><span>Prêts sans intérêt de membres</span><div class="bar" style="width:50%;background:var(--teal)"></div><span class="v">60 k€</span></div>
+          <div class="row" style="grid-template-columns:230px 1fr 60px"><span>Franchise de loyer négociée</span><div class="bar" style="width:39%;background:#8a96a8"></div><span class="v">47 k€</span></div>
+          <div class="row" style="grid-template-columns:230px 1fr 60px"><span>Mécénat d'entreprises</span><div class="bar" style="width:33%;background:var(--gold)"></div><span class="v">40 k€</span></div>
+          <div class="row" style="grid-template-columns:230px 1fr 60px"><span>Dons en nature et compétences</span><div class="bar" style="width:33%;background:var(--gold)"></div><span class="v">40 k€</span></div>
+          <div class="row" style="grid-template-columns:230px 1fr 60px"><span>Préventes d'abonnements</span><div class="bar" style="width:17%;background:var(--teal)"></div><span class="v">20 k€</span></div>
+        </div>
+        <div style="margin-top:8px;font-weight:700">Total ≈ 397 k€ pour un besoin de 380 k€</div></div>
+      <div class="col">
+        <div class="card gold"><h3>OMAS</h3><p>Réseau de professionnels et d'étudiants de santé musulmans<span class="ref" data-s="61">61</span>. Partenaire naturel pour un second gala ou une campagne Ramadan commune. Les dons passent par l'association porteuse pour les reçus. <span class="tag est">modalités à définir</span></p></div>
+        <div class="card"><h3>Pourquoi 70 k€ suffisent pour démarrer</h3><p>Ils financent les statuts, la dotation de 15 k€, le dépôt de garantie et l'architecte. Le bail n'est signé qu'après la porte de décision du 31 mars.</p></div>
+        <div class="card red"><h3>Sans intérêt</h3><p>Pas d'emprunt bancaire à intérêt. La garantie France Active couvre jusqu'à 80 % d'un prêt bancaire<span class="ref" data-s="60">60</span>, utile seulement pour un prêt sans intérêt.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+
+<!-- MURS -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Propriété des murs</span>
+  <h2>Propriétaires en <em>≈ 12 ans</em></h2></div>
+  <div class="body">
+    <div class="grid" style="grid-template-columns:1fr 1.15fr">
+      <div class="col">
+        <div class="card navy"><div class="kpl">Prix estimé des murs (325 m², 20e)</div><div class="kpi" style="font-size:40px">≈ 2,2 M€</div><p>6 373 €/m² en moyenne pour un local commercial dans le 20e au 1/10/2026<span class="ref" data-s="57">57</span> (peu d'annonces : indicatif), plus environ 7,5 % de frais d'acquisition <span class="tag est">estimation</span></p></div>
+        <div class="card green"><div class="kpl">Une fois propriétaire</div><div class="kpi" style="font-size:30px">+94 k€/an</div><p>de loyer économisé : l'excédent est multiplié par près de 4 et finance un second site.</p></div>
+      </div>
+      <div class="col">
+        <table>
+          <tr><th>Rythme d'épargne du waqf</th><th class="n">Par an</th><th class="n">Durée</th><th class="n">Achat</th></tr>
+          <tr><td>Excédents seuls</td><td class="n">34 k€</td><td class="n">&gt; 40 ans</td><td class="n">–</td></tr>
+          <tr><td>Excédents + campagne annuelle 100 k€</td><td class="n">134 k€</td><td class="n">16 ans</td><td class="n">≈ 2043</td></tr>
+          <tr class="hl"><td>Excédents + campagne annuelle 150 k€</td><td class="n">184 k€</td><td class="n">12 ans</td><td class="n">≈ 2039</td></tr>
+          <tr><td>+ legs et grands donateurs (250 k€/an)</td><td class="n">284 k€</td><td class="n">8 ans</td><td class="n">≈ 2035</td></tr>
+        </table>
+        <div class="card gold"><h3>Comment y arriver</h3><ul class="b">
+          <li>Campagne annuelle « Waqf des murs » chaque Ramadan.</li>
+          <li>Programme de legs au fonds de dotation, sans droits<span class="ref" data-s="53">53</span>.</li>
+          <li>Option d'achat négociée dans le bail.</li>
+          <li>Achat sans crédit à intérêt : apport et prêts sans intérêt de membres.</li></ul></div>
+        <p class="note">Hypothèse : excédent en hausse de 3 % par an, prix des murs constant (les prix de vente des bureaux à Paris ont baissé de 6,6 % sur un an<span class="ref" data-s="13">13</span>).</p>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 25 RISQUES -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Risques opérationnels</span>
+  <h2>Risques <em>opérationnels</em></h2></div>
+  <div class="body">
+    <table>
+      <tr><th style="width:240px">Risque</th><th class="n" style="width:90px">Probabilité</th><th class="n" style="width:80px">Impact</th><th>Mitigation</th></tr>
+      <tr><td>Retard de l'autorisation de travaux</td><td class="n">Moyenne</td><td class="n">Élevé</td><td>Dépôt dès la signature du bail (avril 2027 au plus tard) ; échange préalable avec la Préfecture de police ; local déjà ERP 5 pour limiter les travaux ; date d'ouverture de repli au 1er septembre</td></tr>
+      <tr><td>Local recommandé indisponible</td><td class="n">Moyenne</td><td class="n">Moyen</td><td>Lettre d'intention sous 15 jours ; plan B Porte de la Chapelle ; veille sur les annonces des 18e, 19e et 20e</td></tr>
+      <tr><td>Levée inférieure à l'objectif</td><td class="n">Moyenne</td><td class="n">Élevé</td><td>Palier minimum viable à 250 k€ ; mobilier de réemploi ; décision « go / no go » le 31 mars 2027</td></tr>
+      <tr><td>Remplissage plus lent</td><td class="n">Moyenne</td><td class="n">Moyen</td><td>Préventes dès mai 2027 ; conventions BDE ; offre de lancement pour les 100 premiers abonnés</td></tr>
+      <tr><td>Réaction concurrentielle (La Permanence)</td><td class="n">Faible</td><td class="n">Moyen</td><td>Différenciation par la grande salle, le recueillement et la communauté, plutôt qu'une guerre des prix</td></tr>
+      <tr><td>Événementiel sous-performant</td><td class="n">Moyenne</td><td class="n">Élevé</td><td>Commercialisation dès le printemps 2027 (iftars, conférences, soutenances) ; référencement sur les plateformes de location de salles</td></tr>
+      <tr><td>Nuisances le soir dans le bâtiment</td><td class="n">Faible</td><td class="n">Moyen</td><td>Isolation acoustique de la grande salle ; fin des événements à 22h30 ; règlement accepté par le bailleur</td></tr>
+      <tr><td>Dépendance à une seule personne clé</td><td class="n">Moyenne</td><td class="n">Moyen</td><td>Procédures écrites, double habilitation bancaire, gouvernance collégiale du fonds</td></tr>
+    </table>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- 26 NEXT STEPS -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Prochaines étapes</span>
+  <h2>Les <em>10 actions</em> de décembre</h2></div>
+  <div class="body">
+    <div class="grid g2">
+      <div class="card"><table>
+        <tr><th>#</th><th>Action</th><th>Qui</th><th>Échéance</th></tr>
+        <tr><td>1</td><td>Déposer le rescrit mécénat (avant le gala)</td><td>Rôle 1</td><td>27/11</td></tr>
+        <tr><td>2</td><td>Gala TW3 : 70 k€, puis relances et reçus</td><td>Rôle 2</td><td>28/11</td></tr>
+        <tr><td>3</td><td>Valider le montage avec un avocat fiscaliste</td><td>Rôle 1</td><td>12/12</td></tr>
+        <tr><td>4</td><td>Créer le fonds de dotation (préfecture, JO)</td><td>Rôle 1</td><td>19/12</td></tr>
+        <tr><td>5</td><td>Visiter Wikivillage, LOI, 2 adresses de repli</td><td>Rôle 3</td><td>19/12</td></tr>
+        <tr><td>6</td><td>Premier rendez-vous OMAS pour la levée 2</td><td>Rôle 2</td><td>19/12</td></tr>
+        <tr><td>7</td><td>Déposer le besoin de local à la Ville / GIE</td><td>Rôle 3</td><td>19/12</td></tr>
+        <tr><td>8</td><td>Constituer le comité charia</td><td>Rôle 1</td><td>31/12</td></tr>
+        <tr><td>9</td><td>Lancer l'enquête besoins auprès des membres TW3</td><td>Rôle 4</td><td>31/12</td></tr>
+        <tr><td>10</td><td>Solliciter mobilier et compétences en mécénat</td><td>Rôle 2</td><td>15/01</td></tr>
+      </table></div>
+      <div class="col">
+        <div class="card navy"><h3>Décisions du bureau de TW3</h3><ul class="b">
+          <li>Valider les 4 rôles de l'équipe projet.</li>
+          <li>Valider les 3 scénarios et la porte de décision du 31 mars 2027.</li>
+          <li>Valider l'objectif cumulé de 380 k€.</li></ul></div>
+        <div class="card gold"><h3>Ce qui reste à confirmer</h3><ul class="b">
+          <li>Disponibilité de Wikivillage dans 12 mois.</li>
+          <li>Modalités du partenariat avec l'OMAS.</li>
+          <li>Devis de travaux et de mobilier.</li>
+          <li>Avis écrit du comité charia ; textes cités sans lien sur Légifrance.</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+
+<!-- 27 SOURCES -->
+<section class="slide" id="sources-slide">
+  <div class="sh"><span class="kicker">Annexe · Sources</span>
+  <h2>Sources (19/10/2026)</h2></div>
+  <div class="body">
+    <ol id="srclist" style="columns:3;column-gap:22px;font-size:9.6px;line-height:1.35;padding-left:18px"></ol>
+    <p class="note">Les loyers des annonces sont ceux affichés au 19/10/2026 et peuvent évoluer. Les textes cités sans lien (CGI, LPF, Code civil, Code pénal, normes AAOIFI, recueils de hadiths) sont des références à vérifier dans leur version en vigueur. Les montants marqués « estimation » ou « hypothèse » sont des projections et non des données sourcées.</p>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+</div>
+
+<div id="ui">
+  <button id="prev">← Précédent</button>
+  <span id="count">1 / 35</span>
+  <button id="next">Suivant →</button>
+  <button id="mode">Mode lecture</button>
+  <button onclick="window.print()">Imprimer / PDF</button>
+</div>
+
+<script>
+const SOURCES = {
+ 1:["La Permanence, accueil et formules","https://la-permanence.com/"],
+ 2:["La Permanence, salles de réunion","https://la-permanence.com/salles-de-reunion-paris"],
+ 3:["Ville de Paris, La Permanence","https://www.paris.fr/pages/la-permanence-un-espace-de-travail-ouvert-24h-24-4323"],
+ 4:["Cocowork, prix du coworking 2026","https://cocowork.fr/prix-coworking/"],
+ 5:["Cocowork, WeWork prix 2026","https://cocowork.fr/wework-pris/"],
+ 6:["Cocowork, Now Coworking 2026","https://cocowork.fr/avis-now-coworking-tarif/"],
+ 7:["Workin.space, ESSpace Paris 13","https://workin.space/fr/france/paris-13/esspace-2"],
+ 8:["Anticafé, FAQ","https://anticafe.eu/en/faq"],
+ 9:["Paris je t'aime, coworkings","https://parisjetaime.com/article/espaces-coworking-a-paris-a1887"],
+ 10:["Wezoo, salles de réunion 2026","https://wezoo.com/insights/salle-de-reunion"],
+ 11:["Zipcube, salle 100 pers. Châtelet","https://www.zipcube.com/fr/ap/event/e3ox7epjuc50"],
+ 12:["1001 Salles, salles des fêtes Paris","https://www.1001salles.com/blog/article/2597/louer-une-salle-des-fetes-a-paris-le-week-end-tarifs-et-selection-de-3-adresses"],
+ 13:["BureauxLocaux, prix des bureaux à Paris","https://www.bureauxlocaux.com/prix-marche/bureaux/paris"],
+ 14:["BureauxLocaux, Wikivillage 75020","https://www.bureauxlocaux.com/annonce/location-commerce-paris-75020--41056155"],
+ 15:["BureauxLocaux, ERP 5 rue M. de Rochechouart","https://www.bureauxlocaux.com/annonce/local-a-louer-erp-5--42621735"],
+ 16:["BureauxLocaux, Paris 18 Porte de la Chapelle","https://www.bureauxlocaux.com/annonce/location-bureau-paris-75018--39527825"],
+ 17:["BureauxLocaux, 383 m² Paris 19","https://www.bureauxlocaux.com/annonce/locaux-independat--39410846"],
+ 18:["BureauxLocaux, 255 m² ERP 5 Paris 20","https://www.bureauxlocaux.com/annonce/location-bureau-paris-20-75020--38719811"],
+ 19:["Carenews, inauguration Wikivillage","https://www.carenews.com/etic-des-tiers-lieux-responsables/news/inauguration-officielle-du-tiers-lieu-wikivillage-7500m2"],
+ 20:["Service-public, qu'est-ce qu'un ERP","https://entreprendre.service-public.gouv.fr/vosdroits/F32351/"],
+ 21:["Service-public, travaux et ouverture d'un ERP","https://sites.service-information-publique.fr/vias/guide-professionnels/F31687.html"],
+ 22:["Justice.fr, ERP procédures d'autorisation","https://www.justice.fr/fiche/etablissement-recevant-public-erp-procedures-autorisation-travaux"],
+ 23:["Sénat, QE 2015, lieux de prière et ERP","https://www.senat.fr/questions/base/2015/qSEQ150717343.html"],
+ 24:["Préfecture d'Ille-et-Vilaine, associations mixtes","https://www.ille-et-vilaine.gouv.fr/contenu/telechargement/63396/524330/file/Fiche%20synth%C3%A9tique%20association%20mixte.pdf"],
+ 25:["Légifrance, loi 2008-776, art. 140","https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000038610543"],
+ 26:["Justice.fr, fonds de dotation","https://www.justice.fr/fiche/fonds-dotation"],
+ 27:["DAJ Bercy, Q/R fonds de dotation","https://www.economie.gouv.fr/daj/fonds-de-dotation/questions-reponses"],
+ 28:["Actu-Juridique, fonds de dotation","https://www.actu-juridique.fr/civil/biens-patrimoine/gros-plan-sur-les-fonds-de-dotation/"],
+ 29:["DOTASIF, fonds du Secours Islamique France","https://dotasif.org/"],
+ 30:["Saphirnews, fonds de dotation EFOMW","https://www.saphirnews.com/Creation-du-premier-fonds-de-dotation-au-profit-de-l-action-feminine-musulmane_a15048.html"],
+ 31:["Ribh, Al Waqf France","https://ribh.wordpress.com/2015/06/21/al-waqf-france-un-fonds-de-dotation-au-service-de-la-communaute-musulmane/"],
+ 32:["Perenys, le waqf en France","https://perenys.com/articles/waqf"],
+ 33:["impots.gouv, fiche rescrit mécénat","https://www.impots.gouv.fr/media1metier2professionnelev4difficultes440situationdifficileficherescritsmecenatpdf"],
+ 34:["Associathèque, focus rescrits","https://www.associatheque.fr/fr/fichiers/focus/focus-rescrits.pdf"],
+ 35:["Associathèque, appel à la générosité du public","https://www.associatheque.fr/fr/financement-de-l-association/appel-public-a-la-generosite.html"],
+ 36:["Préfecture IDF, appel à la générosité","https://www.prefectures-regions.gouv.fr/ile-de-france/Region-et-institutions/Demarches-administratives/Associations-Mecenat/Creation-et-droits/L-appel-public-a-la-generosite"],
+ 37:["Seban Avocats, loi 2021 et mécénat","https://www.seban-associes.avocat.fr/nouvelles-contraintes-et-controles-pour-le-regime-du-mecenat"],
+ 38:["HelloAsso, associations et dons","https://www.helloasso.com/blog/?p=28834"],
+ 39:["L-Expert-comptable, SMIC 2026","https://www.l-expert-comptable.com/a/36988-le-smic.html"],
+ 40:["Assemblée nationale, amendement PLF 2026 (fonds de dotation)","https://www.assemblee-nationale.fr/dyn/17/amendements/1906C/AN/172"],
+ 41:["Plateau Urbain, appel à candidatures (tarifs ESS)","https://www.les-scop-idf.coop/system/files/2023-05/AAC%20St%20Martin%20-1.pdf"],
+ 51:["Sénat, l'essentiel sur le mécénat (conditions d'intérêt général)","https://conferenceconsensuslogement.senat.fr/rap/a20-448/a20-448-syn.pdf"],
+ 52:["Associathèque, mécénat d'entreprise (60 %)","https://www.associatheque.fr/fr/fichiers/focus/focus-mecenat-entreprise-comment-expert-comptable-accompagne-mecenes-associations.pdf"],
+ 53:["WikiCréa, fonds de dotation (legs, droits de mutation)","https://www.creerentreprise.fr/fonds-de-dotation-principe-avantages/amp/"],
+ 54:["BNP Paribas RE, Review bureaux IDF T2 2026","https://www.realestate.bnpparibas.fr/media/france/2026-08/REVIEW%20BUREAUX%20IDF%20-%20T2%202026.pdf"],
+ 55:["Kohen Avocats, loi n° 2026-403 et baux commerciaux","https://kohenavocats.fr/?p=2134704"],
+ 56:["Ville de Paris, locaux pour associations","https://www.paris.fr/pages/locaux-a-usage-permanent-5387"],
+ 57:["Unemplacement, prix des locaux commerciaux Paris 20e","https://unemplacement.com/local-commercial-vente/ile-de-france/paris-20eme-arrondissement-75020"],
+ 58:["Travail-industrie, taxe sur les salaires 2026","https://travail-industrie.com/outils/chiffres-taux/taxe-sur-salaires"],
+ 59:["Economie.gouv, aides à l'embauche d'apprentis","https://www.economie.gouv.fr/entreprises/aides-embauche-apprenti"],
+ 60:["Les-aides.fr, garanties France Active","https://les-aides.fr/aide/Ip_f/france-active/garanties-france-active.html"],
+ 61:["OMAS France, qui sommes-nous","https://www.omas-france.com/qui-somme-nous/"],
+ 62:["Associathèque, intérêt général et cercle restreint","https://www.associatheque.fr/fr/focus-cercle-restreint.html"]
+};
+const ol=document.getElementById('srclist');
+Object.keys(SOURCES).map(Number).sort((a,b)=>a-b).forEach(k=>{const li=document.createElement('li');li.value=k;li.id='src-'+k;li.innerHTML='<a href="'+SOURCES[k][1]+'" target="_blank" rel="noopener" style="color:#13294B">'+SOURCES[k][0]+'</a>';ol.appendChild(li)});
+
+// Gantt
+const months=['Déc 26','Janv 27','Févr','Mars','Avr','Mai','Juin','Juil','Août','Sept','Oct','Nov'];
+const rows=[
+ ['g','Juridique et administratif'],
+ ['Fonds de dotation : préfecture et JO','n',1,2],
+ ['Rescrit mécénat (6 mois, accord tacite)','n',1,6],
+ ['Comité charia, avis écrit','n',2,3],
+ ['SAS d\'exploitation et conventions','n',4,5],
+ ['g','Financement'],
+ ['Suivi du gala, reçus, relances','f',1,2],
+ ['Levée 2 : réseau OMAS + Ramadan','f',3,4],
+ ['Mécénat d\'entreprises et en nature','f',2,7],
+ ['Porte de décision n°1 (31 mars) : S1, S2 ou S3','m',4],
+ ['Prêts sans intérêt et préventes','f',5,9],
+ ['g','Immobilier : chemin critique (scénario 1)'],
+ ['Recherche, visites, lettre d\'intention','c',1,4],
+ ['Bail signé (condition suspensive AT)','m',5],
+ ['Dossier et instruction de l\'AT (4 mois)','c',5,8],
+ ['Travaux (6 à 8 semaines)','c',9,9],
+ ['Ouverture S1 (mi-septembre)','m',10],
+ ['g','Équipe et scénarios de repli'],
+ ['Équipe projet de 4 bénévoles','',1,12],
+ ['S2 : bail juillet, AT, travaux → ouverture févr. 2028','',8,12],
+ ['S3 : pilote en occupation temporaire','',9,12],
+ ['Recrutement des salariés (S1)','',7,9]
+];
+const G=document.getElementById('gantt');
+G.insertAdjacentHTML('beforeend','<div class="h">Chantier</div>'+months.map(m=>'<div class="h">'+m+'</div>').join(''));
+rows.forEach(r=>{
+  if(r[0]==='g'){G.insertAdjacentHTML('beforeend','<div class="grp">'+r[1]+'</div>');return;}
+  let html='<div class="lab">'+r[0]+'</div>';
+  if(r[1]==='m'){for(let c=1;c<=12;c++){html+= c===r[2]?'<div class="ms">◆</div>':'<div class="cell"></div>';}}
+  else{for(let c=1;c<=12;c++){
+    if(c===r[2]){html+='<div class="gb '+r[1]+'" style="grid-column:span '+(r[3]-r[2]+1)+'"><span></span></div>';c=r[3];}
+    else html+='<div class="cell"></div>';}}
+  G.insertAdjacentHTML('beforeend',html);
+});
+
+// Coverage grid 7h-23h (16 slots)
+const cov=document.getElementById('cov');
+const C={R:'#13294B',M:'#0F766E',A:'#B8892B',V:'#8a96a8',Q:'#E4DDCC'};
+function day(label,spec){let h='<div style="font-weight:600">'+label+'</div>';spec.forEach(c=>h+='<div style="height:16px;border-radius:2px;background:'+C[c]+'"></div>');cov.insertAdjacentHTML('beforeend',h);}
+const wk=['Q','Q','R','R','R','R','R','R','R','R','M','M','A','A','A','A'];
+const wkM=['Q','Q','R','R','R','R','M','M','M','M','M','M','A','A','A','A'];
+day('Lun',wk);day('Mar',wkM);day('Mer',wkM);day('Jeu',wkM);day('Ven',wkM);
+day('Sam',['Q','Q','V','V','V','V','M','M','M','M','M','M','A','A','A','A']);
+day('Dim',['Q','Q','Q','V','V','V','V','V','V','V','V','V','V','Q','Q','Q']);
+
+// Navigation
+const slides=[...document.querySelectorAll('.slide')];
+const N=slides.length;
+slides.forEach((s,k)=>{const p=s.querySelector('.pg');if(p)p.textContent=(k+1)+' / '+N;});
+let cur=0;
+function show(n){cur=Math.max(0,Math.min(N-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===cur));
+ document.getElementById('count').textContent=(cur+1)+' / '+N;document.getElementById('prog').style.width=((cur+1)/N*100)+'%';
+ try{history.replaceState(null,'','#'+(cur+1));}catch(e){}}
+function fit(){const st=document.getElementById('stage');if(document.body.classList.contains('read')){st.style.transform='none';return;}
+ const s=Math.min(window.innerWidth/1300,(window.innerHeight-56)/730);st.style.transform='scale('+s+')';}
+document.getElementById('next').onclick=()=>show(cur+1);
+document.getElementById('prev').onclick=()=>show(cur-1);
+document.getElementById('mode').onclick=()=>{document.body.classList.toggle('read');document.getElementById('mode').textContent=document.body.classList.contains('read')?'Mode présentation':'Mode lecture';fit();};
+document.addEventListener('keydown',e=>{if(document.body.classList.contains('read'))return;
+ if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(cur+1);}
+ if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(cur-1);}
+ if(e.key==='Home')show(0);if(e.key==='End')show(N-1);});
+document.querySelectorAll('.ref').forEach(r=>r.addEventListener('click',()=>{const k=r.dataset.s;const li=document.getElementById('src-'+k);
+ if(!document.body.classList.contains('read'))show(N-1);else document.getElementById('sources-slide').scrollIntoView({behavior:'smooth'});
+ document.querySelectorAll('#srclist li').forEach(x=>x.style.background='');if(li){li.style.background='#F5ECD9';}}));
+window.addEventListener('resize',fit);
+const h=parseInt(location.hash.slice(1));show(isNaN(h)?0:h-1);fit();
+</script>
+</body>
+</html>

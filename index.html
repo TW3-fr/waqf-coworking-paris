@@ -70,7 +70,11 @@ td.n,th.n{text-align:right;white-space:nowrap}
 .cover{background:var(--navy);color:#fff;padding:0;flex-direction:row}
 .cover .l{flex:1.15;padding:64px 56px;display:flex;flex-direction:column;justify-content:space-between}
 .cover .r{flex:.85;position:relative;background:#0b1830}
-.cover .r img{width:100%;height:100%;object-fit:cover;opacity:.75}
+.cover .r img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}
+.cover .rf{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:26px;padding:56px 48px;background:radial-gradient(circle at 80% 20%,#1E3A64,#0b1830 70%)}
+.cover .rf div{border-left:3px solid #e5c37a;padding-left:16px}
+.cover .rf b{display:block;font-family:Fraunces,serif;font-size:44px;color:#e5c37a;line-height:1}
+.cover .rf span{color:#c8d3e6;font-size:14px}
 .cover h1{color:#fff;font-size:42px;line-height:1.1;margin:14px 0 18px}
 .cover .kicker{color:#e5c37a}
 .cover p{color:#c8d3e6;font-size:15px;line-height:1.5;max-width:560px}
@@ -93,6 +97,27 @@ td.n,th.n{text-align:right;white-space:nowrap}
 .diagram{display:grid;grid-template-columns:1fr 70px 1fr 70px 1fr;align-items:center;gap:0}
 .arrow{text-align:center;color:var(--gold);font-size:11px;font-weight:700}
 .arrow b{display:block;font-size:22px;line-height:1}
+.tk{display:flex;align-items:center;gap:10px;margin-top:9px;padding:7px 14px 7px 10px;border-radius:8px;font-size:14.5px;font-weight:600;line-height:1.3;background:var(--green-l);color:#0d5c2c;border-left:5px solid var(--green);max-width:1168px}
+.tk::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.tk.g{background:var(--gold-l);color:#6b4d10;border-left-color:var(--gold)}.tk.g::before{content:"€";background:var(--gold)}
+.tk.n{background:#E8EDF5;color:var(--navy);border-left-color:var(--navy)}.tk.n::before{content:"→";background:var(--navy)}
+.tk.r{background:var(--red-l);color:#8a1c12;border-left-color:var(--red)}.tk.r::before{content:"!";background:var(--red)}
+.proof{background:var(--green-l);border:1px solid #bfe3c9;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.proof.n{background:var(--paper);border-color:var(--line)}
+.proof .pn{font-family:Fraunces,serif;font-size:34px;font-weight:700;color:var(--green);line-height:1}
+.proof.n .pn{color:var(--navy)}
+.proof .pt{font-size:12.5px;line-height:1.4;color:var(--ink)}
+.fx{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center;margin:12px 0}
+.fxl b{display:block;font-size:14px;color:var(--navy)}.fxl small{font-size:11px;color:var(--muted)}
+.fxb{display:flex;height:40px;border-radius:8px;overflow:hidden;font-size:11.5px;font-weight:700;color:#fff}
+.fxb span{display:flex;align-items:center;padding:0 10px;white-space:nowrap;overflow:hidden}
+.fxb .c{background:var(--navy)}.fxb .s{background:var(--gold)}.fxb .l{background:#8a96a8}
+.sw{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.badge{background:rgba(255,255,255,.1);border:1px solid rgba(229,195,122,.55);color:#fff;border-radius:22px;padding:6px 13px;font-size:13px;font-weight:600}
+.badge b{color:#e5c37a}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-2px;margin-right:4px}
 #ui{position:fixed;left:0;right:0;bottom:0;height:44px;display:flex;align-items:center;justify-content:center;gap:10px;color:#c8d3e6;font-size:12px}
 #ui button{background:#2a3850;border:1px solid #3b4c68;color:#fff;border-radius:6px;padding:6px 12px;font:600 12px Inter,sans-serif;cursor:pointer}
 #ui button:hover{background:#34476a}
@@ -121,23 +146,24 @@ body.read #ui{background:#1b2433}
       <div class="kicker">Dossier d'étude · Projet « Waqf Coworking TW3 » (nom de travail)</div>
       <h1>Un waqf urbain pour étudier, travailler et se réunir au cœur de Paris</h1>
       <p>Coworking ouvert de 7h à 23h, salle modulable de 100 personnes, salles réservables à l'heure et espace de recueillement avec ablutions. Étude de marché, comparatif d'adresses, montage juridique et fiscal du waqf en droit français, business plan, scénarios et feuille de route jusqu'à l'ouverture.</p>
+      <div class="badges"><span class="badge"><b>Rentable</b> dès le 6e mois</span><span class="badge">1 000 € donnés = <b>340 €</b> réels</span><span class="badge"><b>0 €</b> d'intérêt payé</span><span class="badge"><b>243 k€</b> de patrimoine permanent</span></div>
     </div>
     <div style="font-size:12px;color:#c8d3e6;line-height:1.6">
       <b style="color:#fff">Porteur envisagé :</b> association loi 1901 (Institut TW3 ou association dédiée, à arbitrer)<br>
-      <b style="color:#fff">Version de travail :</b> 19 octobre 2026 (v2 : local type, équipe, mécénat, murs) · données relevées à cette date<br>
+      <b style="color:#fff">Version de travail :</b> 19 octobre 2026 (v3 : preuves, avantages fiscaux, prêts citoyens) · données relevées à cette date<br>
       <b style="color:#fff">Statut :</b> document confidentiel, non contractuel, à valider par avocat fiscaliste et comité charia
     </div>
   </div>
   <div class="r">
-    <img src="https://imagescdn.bureauxlocaux.com/i2/Kstj6COg5f0bnUY0QX5JQXk1tQGJBsWFw8oPR2bPHTc/114/image.jpg" alt="Local Wikivillage, Paris 20e" referrerpolicy="no-referrer" onerror="this.style.display='none'">
-    <div style="position:absolute;left:16px;bottom:14px;font-size:10px;color:#e5e9f0">Exemple de local étudié (une piste parmi d'autres) : Wikivillage, Paris 20e · photo BureauxLocaux / ETIC</div>
+    <div class="rf"><div><b>× 2,9</b><span>ce que reçoit le lieu pour 1 € réellement payé par un donateur</span></div><div><b>6e mois</b><span>le lieu couvre ses charges chaque mois</span></div><div><b>0 €</b><span>d'intérêt : dons, mécénat et prêts citoyens à 0 %</span></div><div><b>2030</b><span>autonome, avec ses premiers murs</span></div></div>
   </div>
 </section>
 
 <!-- 2 SYNTHESE -->
 <section class="slide">
   <div class="sh"><span class="kicker">Synthèse exécutive</span>
-  <h2>L'essentiel en <em>6 chiffres</em></h2></div>
+  <h2>L'essentiel en <em>6 chiffres</em></h2>
+  <div class="tk">Un lieu rentable dès le 6e mois, financé par des dons défiscalisés à 66 %, sans aucune dette à intérêt.</div></div>
   <div class="body" style="justify-content:center;gap:18px;font-size:14px">
     <div class="grid g3" style="gap:18px">
       <div class="card navy"><div class="kpl">Levée</div><div class="kpi" style="font-size:40px">70 k€ → 380 k€</div><div>Gala du 28/11 · puis OMAS et Ramadan</div></div>
@@ -157,10 +183,75 @@ body.read #ui{background:#1b2433}
 </section>
 
 
+<!-- PREUVES -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Pourquoi y croire</span>
+  <h2>Un modèle <em>crédible</em> : 8 preuves vérifiables</h2>
+  <div class="tk">Les avantages fiscaux, le véhicule juridique et le marché sont déjà éprouvés en France.</div></div>
+  <div class="body">
+    <div class="grid g4" style="gap:12px">
+      <div class="proof"><div class="pn">66 %</div><div class="pt">du don déduit de l'impôt des particuliers, dans la limite de 20 % du revenu imposable<span class="ref" data-s="76">76</span></div></div>
+      <div class="proof"><div class="pn">60 %</div><div class="pt">du mécénat déduit de l'impôt des entreprises, jusqu'à 20 000 € ou 0,5 % du CA<span class="ref" data-s="77">77</span></div></div>
+      <div class="proof"><div class="pn">0 €</div><div class="pt">de droits de mutation sur les legs et donations reçus par un fonds de dotation<span class="ref" data-s="53">53</span></div></div>
+      <div class="proof"><div class="pn">0 %</div><div class="pt">d'intérêt : dons, prêts citoyens gratuits plafonnés par la loi à 5 000 € par prêteur<span class="ref" data-s="79">79</span></div></div>
+      <div class="proof n"><div class="pn">Depuis 2010</div><div class="pt">le Secours Islamique France gère ses waqfs dans un fonds de dotation, DOTASIF<span class="ref" data-s="29">29</span></div></div>
+      <div class="proof n"><div class="pn">≈ 4 600</div><div class="pt">fonds de dotation en France en 2025 : un véhicule éprouvé<span class="ref" data-s="40">40</span></div></div>
+      <div class="proof n"><div class="pn">3 sites</div><div class="pt">pour La Permanence : le coworking abordable fonctionne déjà à Paris<span class="ref" data-s="1">1</span></div></div>
+      <div class="proof n"><div class="pn">8h-20h</div><div class="pt">horaires de la plupart des coworkings parisiens ; nous ouvrons de 7h à 23h<span class="ref" data-s="9">9</span></div></div>
+    </div>
+    <div class="grid g3">
+      <div class="card green"><div class="kpl">Rentable</div><div class="kpi">6e mois</div><p>27,4 k€ de recettes pour 24,6 k€ de charges en rythme de croisière. <span class="tag est">estimation</span></p></div>
+      <div class="card green"><div class="kpl">Patrimoine permanent</div><div class="kpi">243 k€</div><p>sur 380 k€ levés : aménagements, mobilier, dotation, jamais consommés.</p></div>
+      <div class="card green"><div class="kpl">Loyers relevés</div><div class="kpi">180-390 €</div><p>le m² par an pour nos pistes, contre 562 € en moyenne pour les bureaux parisiens<span class="ref" data-s="13">13</span>.</p></div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
+<!-- FISCAL COUP D'OEIL -->
+<section class="slide">
+  <div class="sh"><span class="kicker">L'avantage fiscal en un coup d'œil</span>
+  <h2>Donner coûte <em>3 fois moins</em> que ce que reçoit le lieu</h2>
+  <div class="tk g">Pour 1 000 € reçus par le lieu, un particulier ne débourse que 340 € ; une entreprise 400 €.</div></div>
+  <div class="body">
+    <div class="grid" style="grid-template-columns:1.35fr 1fr">
+      <div class="card"><h3>Ce que reçoit le lieu, et ce que cela coûte vraiment</h3>
+        <div class="fx">
+          <div class="fxl"><b>Particulier</b><small>don de 1 000 €</small></div>
+          <div class="fxb"><span class="c" style="width:34%">340 € payés</span><span class="s" style="width:66%">660 € pris en charge par l'État</span></div>
+        </div>
+        <div class="fx">
+          <div class="fxl"><b>Entreprise</b><small>mécénat de 10 000 €</small></div>
+          <div class="fxb"><span class="c" style="width:40%">4 000 € payés</span><span class="s" style="width:60%">6 000 € de réduction d'IS</span></div>
+        </div>
+        <div class="fx">
+          <div class="fxl"><b>Legs au fonds</b><small>de 100 000 €</small></div>
+          <div class="fxb"><span class="s" style="width:100%">100 000 € transmis au waqf, 0 € de droits de mutation</span></div>
+        </div>
+        <div class="fx">
+          <div class="fxl"><b>Prêt citoyen</b><small>de 5 000 €</small></div>
+          <div class="fxb"><span class="l" style="width:100%">5 000 € remboursés, sans avantage fiscal</span></div>
+        </div>
+        <div style="display:flex;gap:16px;font-size:11px;margin-top:10px">
+          <span><i class="sw" style="background:var(--navy)"></i> payé par le donateur</span>
+          <span><i class="sw" style="background:var(--gold)"></i> pris en charge par l'impôt</span>
+          <span><i class="sw" style="background:#8a96a8"></i> remboursé</span></div>
+        <p class="note" style="margin-top:8px">Sources : particuliers<span class="ref" data-s="76">76</span>, entreprises<span class="ref" data-s="77">77</span>, legs<span class="ref" data-s="53">53</span>. Réduction dans la limite de 20 % du revenu imposable (particuliers) et de 20 000 € ou 0,5 % du CA (entreprises), excédent reportable 5 ans.</p></div>
+      <div class="col">
+        <div class="card navy" style="text-align:center"><div class="kpl">Effet de levier pour un particulier</div><div class="kpi" style="font-size:52px">× 2,9</div><p>Pour 100 € de coût réel, le lieu reçoit 294 €.</p></div>
+        <div class="card gold" style="text-align:center"><div class="kpl">Effet de levier pour une entreprise</div><div class="kpi" style="font-size:52px">× 2,5</div><p>Pour 100 € de coût réel, le lieu reçoit 250 €.</p></div>
+        <div class="card green"><h3>Et en plus</h3><p>Le don finance une <b>aumône continue</b> (<i>sadaqa jariya</i>) : le bien immobilisé produit ses fruits chaque mois, sans jamais être consommé.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
 <!-- LOCAL IDEAL -->
 <section class="slide">
   <div class="sh"><span class="kicker">Le local idéal</span>
   <h2>Un <em>local type</em>, pas une adresse unique</h2>
+  <div class="tk n">Le modèle tient avec tout local conforme jusqu'à 300 €/m²/an : on ne dépend d'aucune adresse.</div>
   <p class="lead">Le business plan repose sur un local de référence aux prix observés à Paris, pas sur une annonce : si une piste disparaît, le modèle tient.</p></div>
   <div class="body">
     <div class="grid g3">
@@ -196,7 +287,8 @@ body.read #ui{background:#1b2433}
 <!-- SCENARIOS -->
 <section class="slide">
   <div class="sh"><span class="kicker">Trois scénarios</span>
-  <h2><em>3 scénarios</em>, décision le 31 mars</h2></div>
+  <h2><em>3 scénarios</em>, décision le 31 mars</h2>
+  <div class="tk">Trois portes de sortie : même avec moins de 150 k€ au 31 mars, le projet démarre.</div></div>
   <div class="body">
     <div class="grid g3">
       <div class="card" style="border:2px solid var(--green)"><h3 style="font-size:19px">1 · Cible</h3>
@@ -205,7 +297,7 @@ body.read #ui{background:#1b2433}
         <div class="lbl">Budget</div><div class="big">380 k€</div>
         <div class="lbl">Ouverture</div><div class="big">Mi-sept. 2027</div>
         <div class="lbl">Rentable chaque mois</div><div class="big" style="color:var(--green)">6e mois <small>févr. 2028</small></div>
-        <div class="lbl">Risques</div><ul class="b"><li>AT de 4 mois : tout retard décale l'ouverture</li><li>Remboursement des prêts sans intérêt (≈ 1 k€/mois)</li></ul></div>
+        <div class="lbl">Risques</div><ul class="b"><li>AT de 4 mois : tout retard décale l'ouverture</li><li>Remboursement des prêts citoyens dès le ≈ 20e mois, sur 24 à 36 mois</li></ul></div>
       <div class="card" style="border:2px solid var(--gold)"><h3 style="font-size:19px">2 · Prudent</h3>
         <div class="lbl">Déclencheur</div><div><b>150 à 300 k€</b>, ou aucun local de 325 m² conforme</div>
         <div class="lbl">Local</div><div class="big">200-250 m² <small>salle 60 pers.</small></div>
@@ -230,6 +322,7 @@ body.read #ui{background:#1b2433}
 <section class="slide">
   <div class="sh"><span class="kicker">Marché et cibles</span>
   <h2>Un besoin réel : <em>étudier tard, pas cher</em></h2>
+  <div class="tk">La demande existe : bibliothèques saturées, coworkings fermés à 20h ; nous ouvrons de 7h à 23h, moins cher.</div>
   </div>
   <div class="body">
     <div class="grid g3">
@@ -259,7 +352,8 @@ body.read #ui{background:#1b2433}
 <!-- 4 BENCHMARK -->
 <section class="slide">
   <div class="sh"><span class="kicker">Benchmark concurrentiel</span>
-  <h2><em>Moins cher</em>, plus de services</h2></div>
+  <h2><em>Moins cher</em>, plus de services</h2>
+  <div class="tk">Le moins cher du marché pour les étudiants, et le seul à offrir une salle de 100 personnes.</div></div>
   <div class="body">
     <table>
       <tr><th style="width:150px">Acteur</th><th style="width:130px">Modèle</th><th>Abonnement mensuel</th><th>Salles de réunion</th><th style="width:110px">Horaires</th><th style="width:250px">Atout / limite</th></tr>
@@ -279,7 +373,8 @@ body.read #ui{background:#1b2433}
 <!-- 5 LA PERMANENCE -->
 <section class="slide">
   <div class="sh"><span class="kicker">Focus concurrent de référence</span>
-  <h2>La Permanence, <em>la référence</em></h2></div>
+  <h2>La Permanence, <em>la référence</em></h2>
+  <div class="tk">Le coworking abordable fonctionne déjà à Paris : La Permanence l'exploite sur 3 sites.</div></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:1.1fr 1fr 1fr">
       <div class="col">
@@ -305,7 +400,8 @@ body.read #ui{background:#1b2433}
 <!-- 6 TARIFS -->
 <section class="slide">
   <div class="sh"><span class="kicker">Offre et grille tarifaire</span>
-  <h2>Nos prix : <em>99 €</em> étudiant, <em>159 €</em> actif</h2></div>
+  <h2>Nos prix : <em>99 €</em> étudiant, <em>159 €</em> actif</h2>
+  <div class="tk">99 € pour un étudiant, 159 € pour un actif : 26 % et 16 % sous le concurrent de référence.</div></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:1fr 1.15fr">
       <div class="card"><h3>Accès illimité mensuel comparé (€ TTC)</h3>
@@ -343,7 +439,8 @@ body.read #ui{background:#1b2433}
 <!-- 7 PROGRAMME SURFACES -->
 <section class="slide">
   <div class="sh"><span class="kicker">Programme des surfaces</span>
-  <h2><em>325 m²</em> suffisent</h2></div>
+  <h2><em>325 m²</em> suffisent</h2>
+  <div class="tk n">325 m² suffisent pour 67 postes, une salle de 100 places et un espace de recueillement.</div></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:1.05fr 1fr">
       <div class="card"><h3>Schéma fonctionnel indicatif (non à l'échelle)</h3>
@@ -388,8 +485,9 @@ body.read #ui{background:#1b2433}
 <!-- 8 PRIERE -->
 <section class="slide">
   <div class="sh"><span class="kicker">Espace de recueillement et ablutions</span>
-  <h2>Salle de prière : <em>oui</em>, réservée aux usagers</h2></div>
-  <div class="body">
+  <h2>Salle de prière : <em>oui</em>, réservée aux usagers</h2>
+  <div class="tk n">Un espace de recueillement est possible et légal, avec 4 règles simples écrites dans le règlement.</div></div>
+  <div class="body" style="font-size:11.8px;line-height:1.4">
     <div class="grid g2">
       <div class="col">
         <div class="card"><h3>1. Ne pas devenir un lieu de culte</h3><p>Un lieu de prière qui reçoit des fidèles sans être déclaré comme ERP de culte (type V) reste soumis à la réglementation ERP, et le maire dispose d'outils pour imposer la mise en conformité<span class="ref" data-s="23">23</span>. <b>Règle d'usage :</b> prière individuelle ou en petit groupe d'usagers présents, pas d'ouverture au quartier, pas de prêche ni de prière du vendredi ouverte au public.</p></div>
@@ -417,7 +515,8 @@ body.read #ui{background:#1b2433}
 <!-- 9 ERP -->
 <section class="slide">
   <div class="sh"><span class="kicker">Conformité ERP et urbanisme</span>
-  <h2>ERP 5e catégorie : <em>4 mois</em> d'instruction</h2></div>
+  <h2>ERP 5e catégorie : <em>4 mois</em> d'instruction</h2>
+  <div class="tk n">ERP de 5e catégorie : 4 mois d'instruction à anticiper, pas de visite de commission à l'ouverture.</div></div>
   <div class="body">
     <div class="grid g3">
       <div class="card"><h3>Classement</h3><ul class="b">
@@ -455,6 +554,7 @@ body.read #ui{background:#1b2433}
 <section class="slide">
   <div class="sh"><span class="kicker">Comparatif d'adresses</span>
   <h2>Les pistes du moment : <em>aucune exclusive</em></h2>
+  <div class="tk n">5 pistes réelles entre 180 et 390 €/m²/an, toutes sous la moyenne parisienne de 562 €.</div>
   <p class="lead">Annonces relevées au 19/10/2026 : elles bougent, la veille continue jusqu'à la signature. Repère : loyer moyen des bureaux parisiens <b>562 €/m²/an</b><span class="ref" data-s="13">13</span> ; ces 5 locaux : <b>180 à 390 €</b>.</p></div>
   <div class="body">
     <div class="grid g5">
@@ -492,7 +592,8 @@ body.read #ui{background:#1b2433}
 <!-- 11 MATRICE -->
 <section class="slide">
   <div class="sh"><span class="kicker">Analyse multicritère</span>
-  <h2>La grille de décision, <em>à appliquer à chaque visite</em></h2></div>
+  <h2>La grille de décision, <em>à appliquer à chaque visite</em></h2>
+  <div class="tk n">Une grille notée sur 7 critères pour décider vite et objectivement entre les pistes.</div></div>
   <div class="body">
     <table>
       <tr><th>Critère</th><th class="n">Poids</th><th class="n">A · Wikivillage 20e</th><th class="n">B · Rochechouart 9e</th><th class="n">C · Chapelle 18e</th><th class="n">D · Villette 19e</th></tr>
@@ -517,7 +618,8 @@ body.read #ui{background:#1b2433}
 <!-- 12 FIQH -->
 <section class="slide">
   <div class="sh"><span class="kicker">Le waqf : fondements</span>
-  <h2>Le waqf : <em>immobiliser</em>, faire profiter</h2></div>
+  <h2>Le waqf : <em>immobiliser</em>, faire profiter</h2>
+  <div class="tk">Un modèle vieux de 14 siècles, déjà transposé en France par DOTASIF et Al Waqf France.</div></div>
   <div class="body">
     <div class="grid g2">
       <div class="col">
@@ -553,7 +655,8 @@ body.read #ui{background:#1b2433}
 <!-- 13 DROIT FRANCAIS -->
 <section class="slide">
   <div class="sh"><span class="kicker">Transposition en droit français</span>
-  <h2>En droit français : <em>le fonds de dotation</em></h2></div>
+  <h2>En droit français : <em>le fonds de dotation</em></h2>
+  <div class="tk">Le fonds de dotation reproduit le waqf : don irrévocable, affectation perpétuelle, legs sans droits.</div></div>
   <div class="body" style="font-size:11.2px;line-height:1.36">
     <div class="grid" style="grid-template-columns:1.1fr 1fr">
       <div class="col">
@@ -590,7 +693,8 @@ body.read #ui{background:#1b2433}
 <!-- ARGENT -->
 <section class="slide">
   <div class="sh"><span class="kicker">Le modèle économique du waqf</span>
-  <h2>L'argent <em>reste dans le lieu</em></h2></div>
+  <h2>L'argent <em>reste dans le lieu</em></h2>
+  <div class="tk">Les dons ne sont jamais consommés : ils produisent des revenus chaque mois, réinvestis à 100 %.</div></div>
   <div class="body">
     <div class="flex" style="align-items:stretch;gap:10px">
       <div class="card navy" style="flex:1"><div class="kpl">1 · Dons</div><div class="kpi">380 k€</div><p>Immobilisés pour toujours : aménagements, mobilier, réserve. <b>Jamais rendus, jamais vendus.</b></p></div>
@@ -614,7 +718,8 @@ body.read #ui{background:#1b2433}
 <!-- 14 ARCHITECTURE -->
 <section class="slide">
   <div class="sh"><span class="kicker">Architecture juridique recommandée</span>
-  <h2>Qui fait quoi : <em>3 entités</em></h2></div>
+  <h2>Qui fait quoi : <em>3 entités</em></h2>
+  <div class="tk n">3 entités, 3 rôles : collecter avec reçus fiscaux, conserver le waqf, exploiter le lieu.</div></div>
   <div class="body">
     <div class="diagram">
       <div class="card navy" style="min-height:250px"><div class="kpl">Entité A</div><h3 style="font-size:18px">Association loi 1901 porteuse</h3><ul class="b" style="font-size:11.5px">
@@ -647,7 +752,8 @@ body.read #ui{background:#1b2433}
 <!-- 15 OPTIONS -->
 <section class="slide">
   <div class="sh"><span class="kicker">Options de montage</span>
-  <h2><em>Simple</em> d'abord, filialiser ensuite</h2></div>
+  <h2><em>Simple</em> d'abord, filialiser ensuite</h2>
+  <div class="tk n">Le montage retenu protège les reçus fiscaux et rend les fruits du waqf traçables.</div></div>
   <div class="body">
     <table>
       <tr><th style="width:190px">Option</th><th>Entités</th><th>Avantages</th><th>Inconvénients</th><th style="width:90px">Verdict</th></tr>
@@ -667,12 +773,13 @@ body.read #ui{background:#1b2433}
 <!-- 16 FISCALITE DONS -->
 <section class="slide">
   <div class="sh"><span class="kicker">Fiscalité des dons</span>
-  <h2>Dons déductibles à <em>66 %</em></h2></div>
+  <h2>Dons déductibles à <em>66 %</em></h2>
+  <div class="tk g">Chaque don coûte 3 fois moins cher au donateur : 1 000 € donnés, 340 € réellement payés.</div></div>
   <div class="body">
     <div class="grid g3">
       <div class="card navy"><h3>Ce que gagne le donateur</h3><ul class="b">
-        <li>Particulier : réduction d'impôt de 66 % du don, dans la limite de 20 % du revenu imposable<span class="ref" data-s="30">30</span> (CGI, art. 200).</li>
-        <li>Entreprise : réduction d'IS de 60 % du versement<span class="ref" data-s="52">52</span> (CGI, art. 238 bis), dans la limite de 20 000 € ou de 0,5 % du CA (texte de référence).</li>
+        <li>Particulier : réduction d'impôt de 66 % du don, dans la limite de 20 % du revenu imposable<span class="ref" data-s="76">76</span> (CGI, art. 200).</li>
+        <li>Entreprise : réduction d'IS de 60 % du versement<span class="ref" data-s="77">77</span> (CGI, art. 238 bis), dans la limite de 20 000 € ou de 0,5 % du CA (texte de référence).</li>
         <li>Exemple : un don de 1 000 € coûte 340 € net à un particulier imposable ; un mécénat de 10 000 € coûte 4 000 € à une entreprise.</li></ul></div>
       <div class="card"><h3>Le rescrit mécénat</h3><ul class="b">
         <li>L'administration dispose de 6 mois à compter du dossier complet<span class="ref" data-s="33">33</span>.</li>
@@ -698,11 +805,12 @@ body.read #ui{background:#1b2433}
 <!-- FISC -->
 <section class="slide">
   <div class="sh"><span class="kicker">Avantages fiscaux</span>
-  <h2>Tous les <em>avantages fiscaux</em></h2></div>
+  <h2>Tous les <em>avantages fiscaux</em></h2>
+  <div class="tk g">Particuliers, entreprises, bénévoles, légataires, employeur : chacun a un avantage fiscal.</div></div>
   <div class="body">
     <div class="grid g3">
-      <div class="card navy"><div class="kpl">Particuliers</div><div class="kpi">66 %</div><p>de réduction d'impôt, dans la limite de 20 % du revenu imposable<span class="ref" data-s="30">30</span>. Un don de 1 000 € coûte 340 €. Excédent reportable sur 5 ans (CGI, art. 200).</p></div>
-      <div class="card navy"><div class="kpl">Entreprises</div><div class="kpi">60 %</div><p>de réduction d'IS<span class="ref" data-s="52">52</span>, plafond de 20 000 € ou 0,5 % du CA (CGI, art. 238 bis). Valable aussi pour le <b>mobilier donné</b> et le <b>mécénat de compétences</b>.</p></div>
+      <div class="card navy"><div class="kpl">Particuliers</div><div class="kpi">66 %</div><p>de réduction d'impôt, dans la limite de 20 % du revenu imposable<span class="ref" data-s="76">76</span>. Un don de 1 000 € coûte 340 €. Excédent reportable sur 5 ans (CGI, art. 200).</p></div>
+      <div class="card navy"><div class="kpl">Entreprises</div><div class="kpi">60 %</div><p>de réduction d'IS<span class="ref" data-s="77">77</span>, plafond de 20 000 € ou 0,5 % du CA (CGI, art. 238 bis). Valable aussi pour le <b>mobilier donné</b> et le <b>mécénat de compétences</b>.</p></div>
       <div class="card navy"><div class="kpl">Bénévoles</div><div class="kpi">66 %</div><p>sur les frais engagés et non remboursés (transport, achats), s'ils renoncent au remboursement : c'est un don (CGI, art. 200).</p></div>
       <div class="card"><div class="kpl">Legs et donations</div><div class="kpi" style="font-size:22px">0 € de droits</div><p>Le fonds de dotation peut recevoir legs et donations en exonération de droits de mutation<span class="ref" data-s="53">53</span> : levier clé pour acheter les murs.</p></div>
       <div class="card"><div class="kpl">Taxe sur les salaires</div><div class="kpi" style="font-size:22px">0 €</div><p>L'équipe est salariée de la SAS, soumise à la TVA : pas de taxe sur les salaires. Si l'association emploie, abattement de 24 256 € en 2026<span class="ref" data-s="58">58</span>.</p></div>
@@ -715,7 +823,8 @@ body.read #ui{background:#1b2433}
 <!-- BONS -->
 <section class="slide">
   <div class="sh"><span class="kicker">Bons plans</span>
-  <h2>Les <em>bons plans</em> à négocier</h2></div>
+  <h2>Les <em>bons plans</em> à négocier</h2>
+  <div class="tk g">Jusqu'à 12 mois de loyer gratuit et 0 € de frais d'entrée sont négociables.</div></div>
   <div class="body">
     <div class="grid g3">
       <div class="card gold"><div class="kpl">Bail ferme 6 ans</div><div class="kpi">6 à 12 mois</div><p>de loyer gratuit à viser. À Paris intra-muros, les « mesures d'accompagnement » atteignent 18 à 24 % du loyer sur la durée ferme (bureaux, T2 2026)<span class="ref" data-s="54">54</span>, soit jusqu'à 14-17 mois sur 6 ans. Moins sur les petites surfaces commerciales.</p></div>
@@ -733,7 +842,8 @@ body.read #ui{background:#1b2433}
 <!-- GUICHETS -->
 <section class="slide">
   <div class="sh"><span class="kicker">Guichets</span>
-  <h2>Où aller chercher <em>chaque avantage</em></h2></div>
+  <h2>Où aller chercher <em>chaque avantage</em></h2>
+  <div class="tk g">14 avantages identifiés, chacun avec son guichet, son entité et sa date.</div></div>
   <div class="body">
     <table style="font-size:10.8px">
       <tr><th style="width:250px">Avantage</th><th>Où, auprès de qui</th><th style="width:60px">Entité</th><th style="width:160px">Quand</th></tr>
@@ -760,7 +870,8 @@ body.read #ui{background:#1b2433}
 <!-- CONFIGURATIONS -->
 <section class="slide">
   <div class="sh"><span class="kicker">Optimisation juridique et fiscale</span>
-  <h2>Les <em>configurations</em> les plus avantageuses</h2></div>
+  <h2>Les <em>configurations</em> les plus avantageuses</h2>
+  <div class="tk g">6 montages légaux qui économisent TVA, impôt sur les sociétés, impôt sur les loyers et droits de succession.</div></div>
   <div class="body" style="font-size:11.3px;line-height:1.38">
     <div class="grid g3">
       <div class="card navy"><div class="kpl">1 · Investissements</div><h3>La SAS achète, le fonds détient la SAS</h3><p>Le fonds apporte sa dotation au <b>capital de la SAS</b>, qui achète travaux et mobilier. Elle <b>récupère la TVA</b> (≈ 40 k€ sur 204 k€ HT) et amortit les biens, ce qui réduit son IS. Le bien waqf devient les <b>titres</b>, déclarés inaliénables dans les statuts du fonds.</p></div>
@@ -778,7 +889,8 @@ body.read #ui{background:#1b2433}
 <!-- 17 RISQUES FISCAUX -->
 <section class="slide">
   <div class="sh"><span class="kicker">Sécurisation juridique et fiscale</span>
-  <h2><em>10 risques</em>, 10 parades</h2></div>
+  <h2><em>10 risques</em>, 10 parades</h2>
+  <div class="tk r">Chaque risque fiscal identifié a sa parade, prévue dès les statuts.</div></div>
   <div class="body">
     <table>
       <tr><th style="width:250px">Risque</th><th>Origine</th><th>Parade</th><th class="n" style="width:80px">Gravité</th></tr>
@@ -790,7 +902,7 @@ body.read #ui{background:#1b2433}
       <tr><td>Discrimination dans l'accès</td><td>Réserver le lieu ou la salle à une confession</td><td>Accès universel, conditions générales identiques pour tous, espace dénommé « recueillement »</td><td class="n"><span class="tag">moyenne</span></td></tr>
       <tr><td>Reçus fiscaux émis à tort</td><td>Collecte avant clarification de l'éligibilité</td><td>Rescrit immédiat, reçus émis après accord exprès ou tacite ; à défaut, collecte via un organisme déjà habilité (fondation abritante)</td><td class="n"><span class="tag">moyenne</span></td></tr>
       <tr><td>Contrôle sur place des reçus</td><td>Pouvoir de contrôle de l'administration sur la régularité des reçus<span class="ref" data-s="37">37</span></td><td>Numérotation continue des reçus, rapprochement banque/reçus, archives sur 6 ans</td><td class="n"><span class="tag ok">faible</span></td></tr>
-      <tr><td>Partenariats publics impossibles</td><td>Fonds de dotation exclu des subventions<span class="ref" data-s="26">26</span> ; contrat d'engagement républicain exigé des associations<span class="ref" data-s="38">38</span></td><td>Partenariats universitaires conclus par l'association (A) ou la SAS (C), jamais par le fonds</td><td class="n"><span class="tag ok">faible</span></td></tr>
+      <tr><td>Partenariats publics impossibles</td><td>Fonds de dotation exclu des subventions<span class="ref" data-s="26">26</span> ; contrat d'engagement républicain exigé des associations<span class="ref" data-s="78">78</span></td><td>Partenariats universitaires conclus par l'association (A) ou la SAS (C), jamais par le fonds</td><td class="n"><span class="tag ok">faible</span></td></tr>
       <tr><td>Exposition médiatique ou politique</td><td>Projet confessionnel perçu comme fermé</td><td>Lieu ouvert à tous, gouvernance transparente, comptes publiés, partenariats ESS (tiers-lieux, BDE, mairie d'arrondissement)</td><td class="n"><span class="tag">moyenne</span></td></tr>
     </table>
   </div>
@@ -800,7 +912,8 @@ body.read #ui{background:#1b2433}
 <!-- 18 BUDGET -->
 <section class="slide">
   <div class="sh"><span class="kicker">Budget de lancement (local de référence, 325 m²)</span>
-  <h2>Budget de lancement : <em>380 k€</em></h2></div>
+  <h2>Budget de lancement : <em>380 k€</em></h2>
+  <div class="tk n">380 k€, dont 243 k€ deviennent un patrimoine permanent du waqf.</div></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:1.25fr 1fr">
       <table>
@@ -841,7 +954,8 @@ body.read #ui{background:#1b2433}
 <!-- 19 P&L -->
 <section class="slide">
   <div class="sh"><span class="kicker">Compte d'exploitation mensuel cible (mois 12)</span>
-  <h2>Le lieu <em>s'autofinance</em></h2></div>
+  <h2>Le lieu <em>s'autofinance</em></h2>
+  <div class="tk">27,4 k€ de recettes pour 24,6 k€ de charges : environ 34 k€ d'excédent par an, réinvesti.</div></div>
   <div class="body" style="font-size:11.8px;line-height:1.38">
     <div class="grid g2">
       <table>
@@ -887,7 +1001,8 @@ body.read #ui{background:#1b2433}
 <!-- GRATUITE -->
 <section class="slide">
   <div class="sh"><span class="kicker">Gratuité des membres</span>
-  <h2>Gratuit pour TW3 et l'OMAS : <em>l'impact</em></h2></div>
+  <h2>Gratuit pour TW3 et l'OMAS : <em>l'impact</em></h2>
+  <div class="tk">La gratuité des membres est finançable : avec un quota de 25 places, le lieu reste rentable.</div></div>
   <div class="body">
     <div class="grid g3">
       <div class="card red"><div class="kpl">A · 40 membres gratuits, sans compensation</div><div class="kpi">−0,6 k€<small style="font-size:13px;color:var(--muted)"> /mois</small></div><p>Recettes 24,0 k€ pour 24,6 k€ de charges. Équilibre à peine atteint au 13e mois, pertes de démarrage <b>jamais compensées</b>.</p></div>
@@ -913,7 +1028,8 @@ body.read #ui{background:#1b2433}
 <!-- 20 MONTEE EN CHARGE -->
 <section class="slide">
   <div class="sh"><span class="kicker">Montée en charge et scénarios</span>
-  <h2>Équilibre au <em>6e mois</em></h2></div>
+  <h2>Équilibre au <em>6e mois</em></h2>
+  <div class="tk">Équilibre au 6e mois ; même en scénario pessimiste, la réserve tient 18 mois.</div></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:1.4fr 1fr">
       <div class="card"><h3>Recettes mensuelles et charges, septembre 2027 à août 2028 (k€ HT)</h3>
@@ -947,7 +1063,8 @@ body.read #ui{background:#1b2433}
 <!-- TEAM -->
 <section class="slide">
   <div class="sh"><span class="kicker">Équipe projet</span>
-  <h2><em>4 personnes</em> suffisent</h2></div>
+  <h2><em>4 personnes</em> suffisent</h2>
+  <div class="tk n">4 bénévoles, 21 à 28 heures par semaine au total, suffisent jusqu'à l'ouverture.</div></div>
   <div class="body">
     <div class="grid g4">
       <div class="card navy"><div class="kpl">Rôle 1</div><h3 style="font-size:17px">Pilote juridique et administratif</h3><div class="big" style="color:#fff;font-size:24px">6-8 h <small style="color:#c8d3e6">/semaine</small></div><ul class="b" style="margin-top:6px">
@@ -970,7 +1087,8 @@ body.read #ui{background:#1b2433}
 <!-- 21 RH -->
 <section class="slide">
   <div class="sh"><span class="kicker">Organisation et ressources humaines</span>
-  <h2><em>2 CDI à 2 000 € net</em>, 1 apprenti, 2 étudiants</h2></div>
+  <h2><em>2 CDI à 2 000 € net</em>, 1 apprenti, 2 étudiants</h2>
+  <div class="tk g">2 000 € net coûtent 3 300 € à l'employeur ; l'apprenti revient à 660 €/mois grâce à l'aide.</div></div>
   <div class="body" style="font-size:11.2px;line-height:1.36">
     <div class="grid" style="grid-template-columns:1.15fr 1fr">
       <div class="col">
@@ -1016,7 +1134,8 @@ body.read #ui{background:#1b2433}
 <!-- 22 FRISE -->
 <section class="slide">
   <div class="sh"><span class="kicker">Feuille de route</span>
-  <h2>Décembre 2026 → <em>ouverture</em></h2></div>
+  <h2>Décembre 2026 → <em>ouverture</em></h2>
+  <div class="tk n">Ouverture mi-septembre 2027 si le bail est signé fin avril.</div></div>
   <div class="body">
     <div class="gantt" id="gantt"></div>
     <div style="display:flex;gap:16px;font-size:10.5px;align-items:center;flex-wrap:wrap">
@@ -1040,7 +1159,8 @@ body.read #ui{background:#1b2433}
 <!-- 23 CHECKLIST -->
 <section class="slide">
   <div class="sh"><span class="kicker">Plan administratif complet</span>
-  <h2>Toutes les <em>formalités</em></h2></div>
+  <h2>Toutes les <em>formalités</em></h2>
+  <div class="tk n">Toutes les formalités, entité par entité : rien n'est laissé au hasard.</div></div>
   <div class="body">
     <div class="grid g4" style="font-size:11.2px">
       <div class="card"><h3>A · Association</h3><ul class="b">
@@ -1052,7 +1172,7 @@ body.read #ui{background:#1b2433}
         <li>Modèle de reçu fiscal et numérotation</li>
         <li>Déclaration annuelle des dons (art. 222 bis)<span class="ref" data-s="37">37</span></li>
         <li>Compte d'emploi annuel des ressources<span class="ref" data-s="35">35</span></li>
-        <li>Contrat d'engagement républicain si subvention<span class="ref" data-s="38">38</span></li>
+        <li>Contrat d'engagement républicain si subvention<span class="ref" data-s="78">78</span></li>
         <li>Assurance RC, règlement du programme de bourses</li></ul></div>
       <div class="card"><h3>B · Fonds de dotation</h3><ul class="b">
         <li>Statuts : objet, dotation permanente et consomptible, remploi, dévolution</li>
@@ -1091,14 +1211,15 @@ body.read #ui{background:#1b2433}
 <!-- 24 LEVEE -->
 <section class="slide">
   <div class="sh"><span class="kicker">Plan de financement</span>
-  <h2>De <em>70 k€</em> à <em>380 k€</em></h2></div>
+  <h2>De <em>70 k€</em> à <em>380 k€</em></h2>
+  <div class="tk">380 k€ visés, 397 k€ de sources identifiées, aucune dette à intérêt.</div></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:1.2fr 1fr">
       <div class="card"><h3>Sources visées (scénario 1)</h3>
         <div class="bars">
           <div class="row" style="grid-template-columns:230px 1fr 60px"><span><b>Gala TW3, 28/11/2026</b></span><div class="bar" style="width:58%;background:var(--navy)"></div><span class="v">70 k€</span></div>
           <div class="row" style="grid-template-columns:230px 1fr 60px"><span>Levée 2 : réseau OMAS + Ramadan</span><div class="bar" style="width:100%;background:var(--gold)"></div><span class="v">120 k€</span></div>
-          <div class="row" style="grid-template-columns:230px 1fr 60px"><span>Prêts sans intérêt de membres</span><div class="bar" style="width:50%;background:var(--teal)"></div><span class="v">60 k€</span></div>
+          <div class="row" style="grid-template-columns:230px 1fr 60px"><span>Prêts citoyens à 0 % (≤ 5 000 € par prêteur)</span><div class="bar" style="width:50%;background:var(--teal)"></div><span class="v">60 k€</span></div>
           <div class="row" style="grid-template-columns:230px 1fr 60px"><span>Franchise de loyer négociée</span><div class="bar" style="width:39%;background:#8a96a8"></div><span class="v">47 k€</span></div>
           <div class="row" style="grid-template-columns:230px 1fr 60px"><span>Mécénat d'entreprises (avant ouverture)</span><div class="bar" style="width:33%;background:var(--gold)"></div><span class="v">40 k€</span></div>
           <div class="row" style="grid-template-columns:230px 1fr 60px"><span>Dons en nature et compétences</span><div class="bar" style="width:33%;background:var(--gold)"></div><span class="v">40 k€</span></div>
@@ -1116,10 +1237,53 @@ body.read #ui{background:#1b2433}
 </section>
 
 
+<!-- PRETS CITOYENS -->
+<section class="slide">
+  <div class="sh"><span class="kicker">Prêts citoyens à 0 %</span>
+  <h2>Prêtez jusqu'à <em>5 000 €</em>, remboursés dès que le lieu est rentable</h2>
+  <div class="tk">Légal, déjà pratiqué en France, et le meilleur argument pour convaincre de donner.</div></div>
+  <div class="body" style="font-size:11.4px;line-height:1.38">
+    <div class="grid g3">
+      <div class="card"><h3>Le mécanisme</h3><ul class="b">
+        <li>Un particulier prête de 500 à 5 000 € <b>sans intérêt</b> pour un projet précis : l'aménagement du lieu.</li>
+        <li>Remboursement dès que les pertes de démarrage sont compensées (≈ 20e mois), sur 24 à 36 mois, dans l'ordre des prêts.</li>
+        <li>Contrat écrit, échéancier publié, fonds affectés au projet. Encours visé : 60 k€.</li>
+        <li>Conforme à la finance islamique : le <i>qard hasan</i>, le « beau prêt » sans intérêt.</li></ul></div>
+      <div class="card navy"><h3>Pourquoi c'est légal</h3><ul class="b">
+        <li>Les plateformes immatriculées à l'ORIAS comme <b>intermédiaires en financement participatif</b> peuvent proposer des prêts à titre gratuit (notice de l'ACPR, 2023)<span class="ref" data-s="80">80</span>.</li>
+        <li>Plafonds légaux : <b>5 000 € par prêteur et par projet</b>, 1 M€ par projet, sans limite de durée<span class="ref" data-s="79">79</span><span class="ref" data-s="80">80</span>.</li>
+        <li>Appel au public : toujours via une plateforme. Recevoir directement du public des fonds remboursables est réservé aux banques.</li>
+        <li>Prêt direct d'un membre : contrat écrit, déclaration n° 2062 au-delà de 5 000 € par an<span class="ref" data-s="81">81</span>.</li></ul></div>
+      <div class="card green"><h3>Déjà fait en France</h3><ul class="b">
+        <li><b>Babyloan</b>, plateforme IFP : prêts solidaires sans intérêt ; 20 M€ prêtés avec MicroWorld<span class="ref" data-s="82">82</span>.</li>
+        <li><b>HelloMerci</b> : prêts à taux zéro entre particuliers, de 200 à 15 000 €<span class="ref" data-s="83">83</span>.</li>
+        <li><b>Prêts d'honneur solidaires</b> à 0 % (Bpifrance, Initiative France, France Active) : plus de 2 000 prêts accordés<span class="ref" data-s="84">84</span>.</li>
+        <li><b>Grande mosquée de Cergy</b> : prêt bancaire à taux zéro de 2,2 M€, remboursé par les dons des fidèles<span class="ref" data-s="85">85</span>.</li></ul></div>
+    </div>
+    <div class="grid" style="grid-template-columns:1.3fr 1fr">
+      <div class="card gold"><h3>Le vrai effet : le prêt fait vendre le don</h3>
+        <table>
+          <tr><th></th><th class="n">Prêter 5 000 €</th><th class="n">Donner 5 000 €</th></tr>
+          <tr><td>Récupéré par la personne</td><td class="n">5 000 €, dans 2 à 4 ans</td><td class="n">–</td></tr>
+          <tr><td>Réduction d'impôt</td><td class="n">0 €</td><td class="n">3 300 €</td></tr>
+          <tr class="hl"><td>Coût réel</td><td class="n">0 €, mais argent immobilisé</td><td class="n">1 700 €</td></tr>
+          <tr><td>Récompense</td><td class="n">pendant le prêt</td><td class="n"><i>sadaqa jariya</i>, pour toujours</td></tr>
+        </table>
+        <p style="margin-top:6px">Placer les deux offres côte à côte montre qu'un don de 5 000 € ne coûte que 1 700 € : beaucoup choisiront le don.</p></div>
+      <div class="col">
+        <div class="card"><h3>À l'échéance</h3><p>Le prêteur est remboursé, puis peut, s'il le souhaite, <b>refaire un don</b> du même montant et recevoir un reçu fiscal à 66 %. Renoncer directement au remboursement ne donne <b>pas</b> droit au reçu : l'opération se fait en deux temps (réponse ministérielle du 27/07/2021)<span class="ref" data-s="86">86</span>.</p></div>
+        <div class="card red" style="padding:8px 12px"><b>Transparence :</b> remboursement non garanti ; risque expliqué par écrit ; encours plafonné ; plateforme et montage validés avant le lancement. <span class="tag est">à valider</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
+</section>
+
 <!-- MECENAT -->
 <section class="slide">
   <div class="sh"><span class="kicker">Mécénat et grands donateurs</span>
-  <h2>Food halal, distribution, sportifs : <em>≈ 500 k€</em> visés</h2></div>
+  <h2>Food halal, distribution, sportifs : <em>≈ 500 k€</em> visés</h2>
+  <div class="tk g">Pour une entreprise, un don de 50 k€ ne coûte que 20 k€ : environ 500 k€ sont atteignables.</div></div>
   <div class="body" style="font-size:11.4px;line-height:1.38">
     <div class="grid" style="grid-template-columns:1.3fr 1fr">
       <div class="col">
@@ -1153,7 +1317,8 @@ body.read #ui{background:#1b2433}
 <!-- MURS -->
 <section class="slide">
   <div class="sh"><span class="kicker">Propriété des murs</span>
-  <h2>Premiers murs dès <em>2029-2030</em> : ailleurs, et loués</h2></div>
+  <h2>Premiers murs dès <em>2029-2030</em> : ailleurs, et loués</h2>
+  <div class="tk">Dès 2029-2030, un premier local acheté et loué rapporte 18 à 27 k€ par an au waqf.</div></div>
   <div class="body">
     <div class="grid" style="grid-template-columns:1fr 1.15fr">
       <div class="col">
@@ -1188,7 +1353,8 @@ body.read #ui{background:#1b2433}
 <!-- HORIZON 2030 -->
 <section class="slide">
   <div class="sh"><span class="kicker">Horizon 2030</span>
-  <h2>Que le lieu <em>tourne seul</em> le plus tôt possible</h2></div>
+  <h2>Que le lieu <em>tourne seul</em> le plus tôt possible</h2>
+  <div class="tk">En 2030, le lieu est autonome, a 6 mois de réserve et possède ses premiers murs.</div></div>
   <div class="body">
     <div class="grid g4">
       <div class="card"><div class="kpl">2027</div><div class="kpi" style="font-size:24px">Ouvrir</div><ul class="b"><li>Levée de 380 k€, bail signé fin avril au plus tard</li><li>Équipe recrutée en juillet-août, ouverture mi-septembre</li><li>Lancement du mécénat food à l'inauguration</li></ul></div>
@@ -1215,7 +1381,8 @@ body.read #ui{background:#1b2433}
 <!-- 25 RISQUES -->
 <section class="slide">
   <div class="sh"><span class="kicker">Risques opérationnels</span>
-  <h2>Risques <em>opérationnels</em></h2></div>
+  <h2>Risques <em>opérationnels</em></h2>
+  <div class="tk r">8 risques identifiés, chacun avec une parade concrète.</div></div>
   <div class="body">
     <table>
       <tr><th style="width:240px">Risque</th><th class="n" style="width:90px">Probabilité</th><th class="n" style="width:80px">Impact</th><th>Mitigation</th></tr>
@@ -1235,7 +1402,8 @@ body.read #ui{background:#1b2433}
 <!-- 26 NEXT STEPS -->
 <section class="slide">
   <div class="sh"><span class="kicker">Prochaines étapes</span>
-  <h2>Les <em>10 actions</em> de décembre</h2></div>
+  <h2>Les <em>10 actions</em> de décembre</h2>
+  <div class="tk n">10 actions d'ici mi-janvier ; la plus urgente : le rescrit avant le gala du 28 novembre.</div></div>
   <div class="body">
     <div class="grid g2">
       <div class="card"><table>
@@ -1273,7 +1441,7 @@ body.read #ui{background:#1b2433}
   <div class="sh"><span class="kicker">Annexe · Sources</span>
   <h2>Sources (19/10/2026)</h2></div>
   <div class="body">
-    <ol id="srclist" style="columns:3;column-gap:22px;font-size:9.6px;line-height:1.35;padding-left:18px"></ol>
+    <ol id="srclist" style="columns:3;column-gap:22px;font-size:9px;line-height:1.3;padding-left:18px"></ol>
     <p class="note">Les loyers des annonces sont ceux affichés au 19/10/2026 et peuvent évoluer. Les textes cités sans lien (CGI, LPF, Code civil, Code pénal, normes AAOIFI, recueils de hadiths) sont des références à vérifier dans leur version en vigueur. Les montants marqués « estimation » ou « hypothèse » sont des projections et non des données sourcées.</p>
   </div>
   <div class="sf"><span>Projet Waqf Coworking · Dossier d'étude · Version de travail 19/10/2026</span><span class="pg"></span></div>
@@ -1283,7 +1451,7 @@ body.read #ui{background:#1b2433}
 
 <div id="ui">
   <button id="prev">← Précédent</button>
-  <span id="count">1 / 39</span>
+  <span id="count">1 / 42</span>
   <button id="next">Suivant →</button>
   <button id="mode">Mode lecture</button>
   <button onclick="window.print()">Imprimer / PDF</button>
@@ -1328,11 +1496,11 @@ const SOURCES = {
  35:["Associathèque, appel à la générosité du public","https://www.associatheque.fr/fr/financement-de-l-association/appel-public-a-la-generosite.html"],
  36:["Préfecture IDF, appel à la générosité","https://www.prefectures-regions.gouv.fr/ile-de-france/Region-et-institutions/Demarches-administratives/Associations-Mecenat/Creation-et-droits/L-appel-public-a-la-generosite"],
  37:["Seban Avocats, loi 2021 et mécénat","https://www.seban-associes.avocat.fr/nouvelles-contraintes-et-controles-pour-le-regime-du-mecenat"],
- 38:["HelloAsso, associations et dons","https://www.helloasso.com/blog/?p=28834"],
+ 38:["Associathèque, loi de 2021 et financement des associations","https://www.associatheque.fr/fr/avis-expert-loi-separatisme-vers-un-controle-accru-du-financement-des-associations.html"],
  39:["L-Expert-comptable, SMIC 2026","https://www.l-expert-comptable.com/a/36988-le-smic.html"],
  40:["Assemblée nationale, amendement PLF 2026 (fonds de dotation)","https://www.assemblee-nationale.fr/dyn/17/amendements/1906C/AN/172"],
  41:["Plateau Urbain, appel à candidatures (tarifs ESS)","https://www.les-scop-idf.coop/system/files/2023-05/AAC%20St%20Martin%20-1.pdf"],
- 51:["Sénat, l'essentiel sur le mécénat (conditions d'intérêt général)","https://conferenceconsensuslogement.senat.fr/rap/a20-448/a20-448-syn.pdf"],
+ 51:["Sénat, l'essentiel sur le mécénat (conditions d'intérêt général)","https://www.senat.fr/rap/a20-448/a20-448-syn.pdf"],
  52:["Associathèque, mécénat d'entreprise (60 %)","https://www.associatheque.fr/fr/fichiers/focus/focus-mecenat-entreprise-comment-expert-comptable-accompagne-mecenes-associations.pdf"],
  53:["WikiCréa, fonds de dotation (legs, droits de mutation)","https://www.creerentreprise.fr/fonds-de-dotation-principe-avantages/amp/"],
  54:["BNP Paribas RE, Review bureaux IDF T2 2026","https://www.realestate.bnpparibas.fr/media/france/2026-08/REVIEW%20BUREAUX%20IDF%20-%20T2%202026.pdf"],
@@ -1340,7 +1508,7 @@ const SOURCES = {
  56:["Ville de Paris, locaux pour associations","https://www.paris.fr/pages/locaux-a-usage-permanent-5387"],
  57:["Unemplacement, prix des locaux commerciaux Paris 20e","https://unemplacement.com/local-commercial-vente/ile-de-france/paris-20eme-arrondissement-75020"],
  58:["Travail-industrie, taxe sur les salaires 2026","https://travail-industrie.com/outils/chiffres-taux/taxe-sur-salaires"],
- 59:["Economie.gouv, aides à l'embauche d'apprentis","https://www.economie.gouv.fr/entreprises/aides-embauche-apprenti"],
+ 59:["Service-public Entreprendre, aides à l'embauche en apprentissage","https://entreprendre.service-public.gouv.fr/vosdroits/F23556"],
  60:["Les-aides.fr, garanties France Active","https://les-aides.fr/aide/Ip_f/france-active/garanties-france-active.html"],
  61:["OMAS France, qui sommes-nous","https://www.omas-france.com/qui-somme-nous/"],
  62:["Associathèque, intérêt général et cercle restreint","https://www.associatheque.fr/fr/focus-cercle-restreint.html"],
@@ -1356,7 +1524,18 @@ const SOURCES = {
  72:["Bladi, essor du fast-food halal","https://www.bladi.net/fast-food-halal-developpe-grande-vitesse-france,102713.html"],
  73:["Home Select, achat de local commercial à Paris","https://homeselect.paris/en/blog/achat-local-commercial-paris-guide/"],
  74:["Carenews, footballeurs engagés dans des associations","https://www.carenews.com/carenews-info/news/les-joueurs-de-l-equipe-de-france-engages-dans-des-associations"],
- 75:["Expert-comptable TPE, coût réel d'un salarié","https://www.expert-comptable-tpe.fr/devis/cout-reel-travail-employe-smic-declare-en-france"]
+ 75:["Expert-comptable TPE, coût réel d'un salarié","https://www.expert-comptable-tpe.fr/devis/cout-reel-travail-employe-smic-declare-en-france"],
+ 76:["Service-public, dons aux associations : réduction de 66 %","https://www.service-public.gouv.fr/particuliers/vosdroits/F426"],
+ 77:["Service-public Entreprendre, mécénat d'entreprise : 60 %","https://entreprendre.service-public.gouv.fr/vosdroits/F22263"],
+ 78:["Banque des Territoires, contrat d'engagement républicain","https://www.banquedesterritoires.fr/subventions-aux-associations-et-loi-contre-le-separatisme-dans-quelle-mesure-est-il-obligatoire-de"],
+ 79:["Légifrance, art. D548-1 CMF (5 000 € par prêteur)","https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006072026/LEGISCTA000029464333/"],
+ 80:["ACPR, notice aux intermédiaires en financement participatif (2023)","https://acpr.banque-france.fr/system/files/2024-12/20231102_ifp_notice_acpr.pdf"],
+ 81:["Service-public, déclarer un prêt entre particuliers","https://www.service-public.gouv.fr/particuliers/vosdroits/F1059"],
+ 82:["Le Monde du Droit, Babyloan et MicroWorld","https://www.lemondedudroit.fr/deals/50872-simon-associes-conseille-microworld.html"],
+ 83:["Le Monde Informatique, HelloMerci et le prêt solidaire","https://www.lemondeinformatique.fr/actualites/lireamp-le-crowdfunding-etend-son-champ-d-application-54296.html"],
+ 84:["Economie.gouv, prêts d'honneur solidaires","https://www.economie.gouv.fr/actualites/prets-dhonneur-solidaires-plus-de-2-000-prets-approuves"],
+ 85:["CCME, la grande mosquée de Cergy","https://www.ccme.org.ma/la-grande-mosquee-de-cergy-un-symbole-de-l-islam-de-france/"],
+ 86:["Associathèque, abandon de créance et reçu fiscal","https://www.associatheque.fr/fr/fichiers/focus/focus-abandon-de-creance-et-recu-fiscal.pdf"]
 };
 const ol=document.getElementById('srclist');
 Object.keys(SOURCES).map(Number).sort((a,b)=>a-b).forEach(k=>{const li=document.createElement('li');li.value=k;li.id='src-'+k;li.innerHTML='<a href="'+SOURCES[k][1]+'" target="_blank" rel="noopener" style="color:#13294B">'+SOURCES[k][0]+'</a>';ol.appendChild(li)});
